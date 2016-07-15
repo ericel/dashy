@@ -1,0 +1,290 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  background: #ebebeb;
+background: -moz-linear-gradient(left, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, #ebebeb), color-stop(47%, #f7f7f7), color-stop(100%, #ededed));
+background: -webkit-linear-gradient(left, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
+background: -o-linear-gradient(left, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
+background: -ms-linear-gradient(left, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
+background: linear-gradient(to right, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
+
+}
+
+a {text-decoration: none;}
+a:link, button {
+    -webkit-tap-highlight-color: rgba(169,3,41,.5);
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  background: #ECD9D9;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+.navbar { 
+ margin-bottom: 0;
+ z-index: 999;
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+   .container {margin-left: 60px;}
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+
+}
+.navbar-brand a {
+  color:#322B2B;
+}
+.navbar-brand a:hover {
+  color: #322B2B;
+  text-decoration: none;
+}
+.dashy{
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 0px 15px;
+}
+/* PAGE SLIDE NAVIGATION */
+.navbar-default {
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#f3f3f3),to(#e2e2e2));
+    background-image: -webkit-linear-gradient(top,#f3f3f3,#e2e2e2);
+    background-image: -o-linear-gradient(top,#f3f3f3,#e2e2e2);
+    background-image: linear-gradient(to bottom,#f3f3f3,#e2e2e2);
+}
+.menu, .emails {list-style: none; padding-left: 0; font-family: 'Shift', sans-serif; z-index: 9998; } 
+i {width: 59px; text-align: center; font-weight: bold;} 
+ .header li {color: #fff; font-size: 18px; padding-top: 18px; padding-bottom: 18px; }
+  
+
+ .menu {font-weight: 400; background-color:  ;   background: linear-gradient(to right,#3a3633 93%,#2a2725 100%); margin-top: 0; margin-bottom: 0; height: 100%; 
+   left: 0; width: 59px; white-space: nowrap;position:fixed ; top:0;}
+
+ .menu .closed{
+    display:none;
+
+ }
+ .menu  .closed{
+ 
+    position: relative;
+    background: #3a3633;
+    background: linear-gradient(to right,#3a3633 93%,#2a2725 100%);
+    padding: 5px; 
+    color:#fff;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    -webkit-border-top-left-radius: 2px;
+    -webkit-border-top-left-radius: 2px;
+    -moz-border-top-left-radius: 2px;
+    -moz-border-top-left-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+ }
+ .menu span.closed:after {
+
+    content: '';
+    display: block;  
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-top: -10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid #3a3633;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+   
+
+}
+
+ .menu li {padding-top: 10px; padding-bottom: 10px; font-size: 14px; color: #959595; cursor:pointer; z-index: 9999; } 
+ .menu .fa {color: #4c4c4c; margin-right: 5px; } 
+ .icon-menu {cursor: pointer; } 
+ .menu .fa-times {font-size: 12px; color: #9f9f9f; position: relative; right: 5px; top: 5px; display: block; width: 193px; text-align: right; cursor: pointer; } 
+ .menu .active, .active .fa {color: #4175f6; } 
+ .menu-ass {
+  bottom:60px;
+  position: absolute;
+ }
+@media screen and (max-width: 768px) {
+
+   .container {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+ 
+}
+.menu li:hover {
+    background: rgba(69,69,69,.6);
+
+}
+
+ /* PAGE END SLIDE NAVIGATION */
+.main {
+  background: #ebebeb;
+background: -moz-linear-gradient(left, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, #ebebeb), color-stop(47%, #f7f7f7), color-stop(100%, #ededed));
+background: -webkit-linear-gradient(left, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
+background: -o-linear-gradient(left, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
+background: -ms-linear-gradient(left, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
+background: linear-gradient(to right, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
+
+}
+.card {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  margin: 0.5%;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #757575;
+  width:100%;
+  padding: 10px;
+}
+.card:last-child { margin-bottom: 0 !important; margin-right: 0 !important; }
+.breadcrumb {
+ min-height: 40px;
+ background: linear-gradient(to left,#3a3633 93%,#2a2725 100%);
+ padding: 10px 0;
+ border-radius: 0;
+ color: #E5E3E3;
+
+}
+.searchform {
+
+  display: none;
+  width: 200px;
+  clear:both;
+
+}
+.searchbtn {
+  cursor:pointer;
+  position: relative;
+}
+.searchform button {
+  color: #333;
+}
+.searchform .btn {
+    padding: 1px 12px;
+}
+.searchform .form-control {
+
+    height: 24px;
+}
+
+.card-blocks {
+  /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);*/
+    padding: 0 10px 0 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    text-align: center; 
+}
+
+.stat {
+  font-size: 0.8em;
+  color: green;
+}
+.green {
+  color: green;
+}
+.red{
+  color: red;
+}
+.indigo {
+  color:indigo;
+}
+.skyblue {
+  color: skyblue;
+}
+.stat-st {
+    font-size: 3em;
+    color: #333;
+    font-weight: bold;
+    
+}
+.card-blocks:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 65px;
+    border-left: 2px solid #ADB2B5;
+    margin-top: 10px;
+}
+.card-blocks:first-child:before {
+    border-left: 0;
+}
