@@ -78,21 +78,28 @@
 
       </div>
      </div>
-  <ul class="menu" >
-      <li>
-        <i class="glyphicon glyphicon-lamp"></i>
-         <span>Dashy</span>
-        </li>  
-         <li><i class="glyphicon glyphicon-th-large"></i> <span>Dashboard</span></li> 
-         <li><i class="glyphicon glyphicon-object-align-bottom"></i> <span>Charts</span></li>
-         <li><i class="glyphicon glyphicon-flash"></i> <span>Flashy</span></li> 
-         <li><i class="glyphicon glyphicon-sound-7-1"></i>  <span>0 reported  links</span></li>
-         <li><i class="glyphicon glyphicon-stats"></i> <span>0 saved links</span></li> 
-         <div class="menu-ass">
-          <li><i class="glyphicon glyphicon-menu-down"></i> <span>register now</span></li> 
-         <li><i class="glyphicon glyphicon-log-in"></i> <span>logout</span></li> 
-       </div>
-  </ul>
+     <nav>
+        <ul class="menu" >
+            <li>
+              <i class="glyphicon glyphicon-lamp"></i>
+               <span>Dashy</span>
+              </li>  
+               <li><a data-toggle="collapse" data-parent="#accordion" href="#dashboards"><i class="glyphicon glyphicon-home" ></i> <span>Dashboards</span></a> </li>
+               <ul id="dashboards" class="collapse">
+                   <li><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 1</span></li>
+                   <li><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 2</span></li>
+                   <li><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 3</span></li>
+                </ul>
+               <li><i class="glyphicon glyphicon-object-align-bottom"></i> <span>Charts</span></li>
+               <li><i class="glyphicon glyphicon-flash"></i> <span>Flashy</span></li> 
+               <li><i class="glyphicon glyphicon-sound-7-1"></i>  <span>0 reported  links</span></li>
+               <li><i class="glyphicon glyphicon-stats"></i> <span>0 saved links</span></li> 
+               <div class="menu-ass">
+                <li><i class="glyphicon glyphicon-menu-down"></i> <span>register now</span></li> 
+               <li><i class="glyphicon glyphicon-log-in"></i> <span>logout</span></li> 
+             </div>
+        </ul>
+    </nav>
     <div class="main container">
     
     <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>

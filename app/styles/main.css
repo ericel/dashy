@@ -120,9 +120,15 @@ a:link, button {
     background-image: -o-linear-gradient(top,#f3f3f3,#e2e2e2);
     background-image: linear-gradient(to bottom,#f3f3f3,#e2e2e2);
 }
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 15px 15px;
+   
+}
 .menu, .emails {list-style: none; padding-left: 0; font-family: 'Shift', sans-serif; z-index: 9998; } 
 i {width: 59px; text-align: center; font-weight: bold;} 
- .header li {color: #fff; font-size: 18px; padding-top: 18px; padding-bottom: 18px; }
+
   
 
  .menu {font-weight: 400; background-color:  ;   background: linear-gradient(to right,#3a3633 93%,#2a2725 100%); margin-top: 0; margin-bottom: 0; height: 100%; 
@@ -193,10 +199,48 @@ i {width: 59px; text-align: center; font-weight: bold;}
     background: rgba(69,69,69,.6);
 
 }
-
+ul#dashboards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#dashboards {
+  background: rgba(69,69,69,.6);
+  position: relative;
+}
+#dashboards:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 5px;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid #7A7A7A;
+}
+#dashboards li::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width:12px;
+    left: 5px;
+    border-top: 1px solid #7A7A7A;
+    z-index: 1;
+    margin-top: 9px;
+}
+nav a {
+  color: #7A7A7A;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #7A7A7A;
+  text-decoration: none;
+}
  /* PAGE END SLIDE NAVIGATION */
+
+
 .main {
-  background: #ebebeb;
+background: #ebebeb;
 background: -moz-linear-gradient(left, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
 background: -webkit-gradient(left top, right top, color-stop(0%, #ebebeb), color-stop(47%, #f7f7f7), color-stop(100%, #ededed));
 background: -webkit-linear-gradient(left, #ebebeb 0%, #f7f7f7 47%, #ededed 100%);
@@ -310,7 +354,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E8E8E8', end
   padding: 4px;
 }
 /*#3a3633*/
-.nav-tabs > li > a {
+.box-2-semi .nav-tabs > li > a {
     margin-right: 5px;
     line-height: 1.42857143;
     border: 1px solid transparent;
@@ -321,4 +365,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E8E8E8', end
 }
 .nav-tabs > li {
   border: none;
+}
+.panel-heading span
+{
+
+    font-size: 15px;
+    margin-right: -12px;
+}
+
+.clickable {
+    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.sec-2 {
+  margin-top: 10px;
 }

@@ -17,6 +17,7 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch'
+
   ]);
 
   var toggle_btn = $('.toggle-side');
@@ -83,5 +84,10 @@ if(!$('.menu li span').hasClass('closed')){
 	 	} 
 	 	
 	});
+
+$('.clickable').on('click',function(){
+    var effect = $(this).data('effect');
+        $(this).closest('.panel')[effect]();
+	})
 
 
