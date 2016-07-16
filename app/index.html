@@ -58,12 +58,14 @@
     </div>
     <div class="breadcrumb">
       <div class="container">
-           <ol class="breadcrumb">
+      <div class="pull-left">
+           <ol>
               <li ng-repeat="crumb in $breadcrumbs" ng-class="{ 'active' : $last }">
                   <a ng-if="!$last" href="{{$state.href(crumb.state, crumb.stateParams)}}">{{crumb.title}}</a>
                   <span ng-if="$last">{{crumb.title}}</span>
               </li>
           </ol>
+      </div>
           <div class="pull-right">
           
           <div class=" searchform pull-left">

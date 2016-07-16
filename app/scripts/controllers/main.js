@@ -17,3 +17,17 @@ angular.module('dashyAppApp')
 
 
   });
+var count = 0,
+	max = 1029;
+var inTv = setInterval(function(){startCount()},10);
+function startCount()
+{
+    if(count == max) {
+        clearInterval(inTv);
+    } else {
+        count++;
+    }
+    
+    $('.stats_em').text(count); 
+}
+

@@ -22,7 +22,7 @@ angular
   ])
   .config(['$stateProvider', '$urlRouterProvider',
    function($stateProvider, $urlRouterProvider) {
-  	$urlRouterProvider.otherwise('/');
+  	$urlRouterProvider.otherwise('/home');
    
   	$stateProvider
   		.state('home', {
@@ -30,22 +30,23 @@ angular
   			templateUrl: 'views/main.html',
   			controller: 'MainCtrl',
   			resolve: {
-		      // Constant title
 		      $title: function() { return 'Welcome To Dashy'; }
 		    }
   		})
   		.state('dashykeymetrics', {
   			url: '/dashykeymetrics',
   			templateUrl: 'views/dashy2.html',
-  			controller: 'Dashy2Ctrl'
+  			controller: 'Dashy2Ctrl',
+  			resolve: {
+		      $title: function() { return 'Dashy Key Metrics'; }
+		    }
   		})
   		.state('dashydataview', {
   			url: '/dashydataview',
   			templateUrl: 'views/dashy3.html',
   			controller: 'Dashy3Ctrl',
   			resolve: {
-		      // Constant title
-		      $title: function() { return 'Welcome To Dashy Data View'; }
+		      $title: function() { return 'Dashy Data View'; }
 		    }
   		})
   }]);
