@@ -1,8 +1,8 @@
 <!doctype html>
-<html>
+<html ng-app="dashyAppApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title ng-bind="($title || 'Home') "></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="dashyAppApp" >
+  <body>
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -58,7 +58,12 @@
     </div>
     <div class="breadcrumb">
       <div class="container">
-           Home / Dashboard / Analytics Dashboard
+           <ol class="breadcrumb">
+              <li ng-repeat="crumb in $breadcrumbs" ng-class="{ 'active' : $last }">
+                  <a ng-if="!$last" href="{{$state.href(crumb.state, crumb.stateParams)}}">{{crumb.title}}</a>
+                  <span ng-if="$last">{{crumb.title}}</span>
+              </li>
+          </ol>
           <div class="pull-right">
           
           <div class=" searchform pull-left">
@@ -86,9 +91,9 @@
               </li>  
                <li><a data-toggle="collapse" data-parent="#accordion" href="#dashboards"><i class="glyphicon glyphicon-home" ></i> <span>Dashboards</span></a> </li>
                <ul id="dashboards" class="collapse">
-                   <li><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 1</span></li>
-                   <li><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 2</span></li>
-                   <li><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 3</span></li>
+                   <li><a ui-sref="home"><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 1</span></a></li>
+                   <li><a ui-sref="dashykeymetrics"><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 2</span></a></li>
+                   <li><a ui-sref="dashydataview"><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 3</span></a></li>
                 </ul>
                <li><i class="glyphicon glyphicon-object-align-bottom"></i> <span>Charts</span></li>
                <li><i class="glyphicon glyphicon-flash"></i> <span>Flashy</span></li> 
@@ -102,7 +107,8 @@
     </nav>
     <div class="main container">
     
-    <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+    <!--<div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>-->
+     <div ui-view></div>
     </div>
 
     <div class="footer">
@@ -136,12 +142,16 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-router-title/angular-ui-router-title.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/dashy2.js"></script>
+        <script src="scripts/controllers/dashy3.js"></script>
         <!-- endbuild -->
 </body>
 </html>

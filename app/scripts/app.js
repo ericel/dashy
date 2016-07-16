@@ -16,9 +16,42 @@ angular
     'ngMessages',
     'ngResource',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router',
+    'ui.router.title'
+  ])
+  .config(['$stateProvider', '$urlRouterProvider',
+   function($stateProvider, $urlRouterProvider) {
+  	$urlRouterProvider.otherwise('/');
+   
+  	$stateProvider
+  		.state('home', {
+  			url: '/home',
+  			templateUrl: 'views/main.html',
+  			controller: 'MainCtrl',
+  			resolve: {
+		      // Constant title
+		      $title: function() { return 'Welcome To Dashy'; }
+		    }
+  		})
+  		.state('dashykeymetrics', {
+  			url: '/dashykeymetrics',
+  			templateUrl: 'views/dashy2.html',
+  			controller: 'Dashy2Ctrl'
+  		})
+  		.state('dashydataview', {
+  			url: '/dashydataview',
+  			templateUrl: 'views/dashy3.html',
+  			controller: 'Dashy3Ctrl',
+  			resolve: {
+		      // Constant title
+		      $title: function() { return 'Welcome To Dashy Data View'; }
+		    }
+  		})
+  }]);
 
-  ]);
+
+
 
   var toggle_btn = $('.toggle-side');
   /*toggle_btn.click(function() {
