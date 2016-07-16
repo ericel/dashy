@@ -38,13 +38,14 @@
 <div>
 
 </div>
+<section>
 <div class="box-2">
   <div class="box-2-semi">
     <span class="glyphicon glyphicon-stats"></span> Live Statistics
     <ul class="nav nav-tabs pull-right">
-    <li class="active"><a href="#stat1" data-toggle="tab">Home</a></li>
-    <li><a href="#stat2" data-toggle="tab">Menu 2</a></li>
-    <li><a href="#stat3" data-toggle="tab">Menu 3</a></li>
+    <li class="active"><a href="#stat1" data-toggle="tab"><span class="glyphicon glyphicon-time"></span> Home</a></li>
+    <li><a href="#stat2" data-toggle="tab"><span class="glyphicon"></span> Menu 2</a></li>
+    <li><a href="#stat3" data-toggle="tab"><span class="glyphicon"></span> Menu 3</a></li>
   </ul>
   </div>
    <div class="tab-content">
@@ -61,17 +62,59 @@
   <div class="box-2-semi-up">jjj
   </div>
 </div>
+</section>
 <section class="sec-2">
 <div class="col-sm-6 col-md-5 col-lg-6">
-<div class="panel panel-default">
-    <div class="panel-heading">Panel Heading
-     <span class="pull-right clickable" data-effect="fadeOut"><i class="fa fa-times"></i></span>
-    </div>
-    <div class="panel-body">Panel Content</div>
+   <div class="panel panel-default">
+    <div class="panel-heading"><span class="glyphicon glyphicon-map-marker marker"></span> This Page is Disabled <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
+      <div class="panel-body">
+        <ui-gmap-google-map 
+          center='map.center' 
+          zoom='map.zoom' aria-label="Google map">
+          
+          <ui-gmap-marker ng-repeat="marker in markers"
+            coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+            <ui-gmap-window>
+              <div>{{marker.window.title}}</div>
+            </ui-gmap-window>
+          </ui-gmap-marker>
+          
+        </ui-gmap-google-map>
+      </div>
   </div>
+   <div class="panel panel-default">
+    <div class="panel-heading">This Page is Disabled <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
+      <div class="panel-body">This page is temporarily disabled by the site administrator for some reason.<br> <a href="#">Click here</a> to enable the page.
+      <p>
+        What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      </div>
+  </div>
+
 </div>
 <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">
-ghhhhhhhhhh
+
+<div class="panel panel-default">
+    <div class="panel-heading">This Page is Disabled <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
+      <div class="panel-body">This page is temporarily disabled by the site administrator for some reason.<br> <a href="#">Click here</a> to enable the page.
+       <p>
+        What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+
+      </div>
+  </div>
+   <div class="panel panel-default">
+    <div class="panel-heading">This Page is Disabled <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
+      <div class="panel-body">This page is temporarily disabled by the site administrator for some reason.<br> <a href="#">Click here</a> to enable the page.
+      <p>
+        What is Lorem Ipsum?
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      </div>
+  </div>
+
 
 </div>
 </section>

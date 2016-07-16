@@ -18,7 +18,9 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.router',
-    'ui.router.title'
+    'ui.router.title',
+    'googlechart',
+    'uiGmapgoogle-maps'
   ])
   .config(['$stateProvider', '$urlRouterProvider',
    function($stateProvider, $urlRouterProvider) {
