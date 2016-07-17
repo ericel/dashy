@@ -20,7 +20,8 @@ angular
     'ui.router',
     'ui.router.title',
     'googlechart',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'easypiechart'
   ])
   .config(['$stateProvider', '$urlRouterProvider',
    function($stateProvider, $urlRouterProvider) {

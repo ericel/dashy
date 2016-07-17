@@ -48,9 +48,19 @@
     <li><a href="#stat3" data-toggle="tab"><span class="glyphicon"></span> Menu 3</a></li>
   </ul>
   </div>
-   <div class="tab-content">
+   <div class="tab-content bor-der">
     <div id="stat1" class="tab-pane fade in active">
-        Some graphs coming here soon
+    <div class="row">
+      <div class="col-sm-6 col-md-5 col-lg-6 geospartial">
+          <div google-chart chart="chart"></div>
+      </div>
+      <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0 bar-chart">
+        <div google-chart chart="chart2" style="width: 99%; height:90%;"></div>
+      </div>
+      <div>
+      Hello world
+      </div>
+    </div>
     </div>
     <div id="stat2" class="tab-pane fade">
         Another Some graphs coming here soon
@@ -59,7 +69,29 @@
        some Another Some graphs coming here soon
     </div>
   </div>
-  <div class="box-2-semi-up">jjj
+  <div class="box-2-semi-up">
+  <div class="angular-easy">
+     <span class="chart" easypiechart ng-init="options = { animate:true, duration:20, barColor:'#E67E22', scaleColor:false, lineWidth:3, lineCap:'butt' }" percent="percenteasy" options="optionseasy">
+      <span class="percent" ng-bind="percenteasy"></span>
+      <span class="glyphicon glyphicon-chevron-down stat red"></span><span class="pie-title">some time</span>
+    </span>
+
+    <span class="chart" easypiechart ng-init="options = { animate:true, duration:20, barColor:'#E67E22', scaleColor:false, lineWidth:3, lineCap:'butt' }" percent="percenteasy" options="optionseasy">
+      <span class="percent" ng-bind="percenteasy"></span>
+      <span class="glyphicon glyphicon-chevron-down stat red"></span><span class="pie-title">some time</span>
+    </span>
+
+    <span class="chart" easypiechart ng-init="options = { animate:true, duration:20, barColor:'#E67E22', scaleColor:false, lineWidth:3, lineCap:'butt' }" percent="percenteasy" options="optionseasy">
+      <span class="percent" ng-bind="percenteasy"></span>
+      <span class="glyphicon glyphicon-chevron-down stat red"></span><span class="pie-title">some time</span>
+    </span>
+
+    <span class="chart" easypiechart ng-init="options = { animate:true, duration:20, barColor:'#E67E22', scaleColor:false, lineWidth:3, lineCap:'butt' }" percent="percenteasy" options="optionseasy">
+      <span class="percent" ng-bind="percenteasy"></span>
+      <span class="glyphicon glyphicon-chevron-down stat red"></span><span class="pie-title">some time</span>
+    </span>
+    
+    </div>
   </div>
 </div>
 </section>

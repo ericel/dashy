@@ -351,7 +351,8 @@ ol li {
   
 }
 .box-2 {
-border: 1px solid #ADB2B5;
+
+border: none;
 background: -moz-linear-gradient(87deg, rgba(250,255,254,1) 0%, rgba(246,249,249,1) 22%, rgba(239,240,240,1) 60%, rgba(232,232,232,1) 99%); /* ff3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, rgba(232,232,232,1)), color-stop(40%, rgba(239,240,240,1)), color-stop(78%, rgba(246,249,249,1)), color-stop(100%, rgba(250,255,254,1))); /* safari4+,chrome */
 background: -webkit-linear-gradient(87deg, rgba(250,255,254,1) 0%, rgba(246,249,249,1) 22%, rgba(239,240,240,1) 60%, rgba(232,232,232,1) 99%); /* safari5.1+,chrome10+ */
@@ -363,13 +364,39 @@ margin-right: 15px;
 margin-left: 15px;
 }
 .box-2-semi {
-  border-bottom: 1px solid #ADB2B5;
+ 
   padding: 4px;
+  background: linear-gradient(to right,#3a3633 93%,#2a2725 100%);
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top: none;
+  color: #ddd; 
 }
 .box-2-semi-up {
-  border-top: 1px solid #ADB2B5;
+
   padding: 4px;
+  border: 1px solid #ddd;
+  border-top: none;
+  color: #000000;
 }
+.bor-der {
+  border: 1px solid #ddd;
+  border-top: none;
+  overflow: hidden;
+}
+.geospartial{
+
+ padding-right: 0px; 
+ padding-left: 15px; 
+}
+.bar-chart {
+
+ padding-right: 5px; 
+ padding-left: 0;
+ overflow: hidden;
+
+}
+
 /*#3a3633*/
 .box-2-semi .nav-tabs > li > a {
     margin-right: 5px;
@@ -423,4 +450,43 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E8E8E8', end
 
 .angular-google-map-container {
   height:300px;
+}
+.chart {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding-left: 16px;
+  margin-right: 20px;
+}
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.percent {
+    display: inline-block;
+    line-height: 60px;
+    z-index: 2;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: .8em;
+}
+.angular-easy {
+  margin-top: 0;
+}
+
+.pie-title {
+    display: inline;
+    margin: 10px 0 10px 0;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 0;
 }
