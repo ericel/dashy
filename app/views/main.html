@@ -61,7 +61,7 @@
       </div>
     </div>
     </div>
-    <div id="stat2" class="tab-pane fade" style="width: 99%; height:20%;">
+    <div id="stat2" class="tab-pane fade" style="width: 100%; height:20%;">
        <div  style="display: block; box-sizing: border-box;" class="conatainer">
         <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"  width="300" height="300"></canvas>
         </div>
@@ -71,13 +71,13 @@
     </div>
   </div>
   <div class="box-2-semi-up">
-
+     <div>
     <span class="" ng-repeat="item in items.countries">
-    <span class="chart" easypiechart ng-init="options = { animate:true, duration:1000, barColor:'#E67E22', scaleColor:true, lineWidth:1, lineCap:'butt' }" percent = "item.employ_count" options="optionseasy">
+    <span class="charte" easypiechart ng-init="options = { animate:true, duration:1000, barColor:'#E67E22', scaleColor:true, lineWidth:1, lineCap:'butt' }" percent = "item.employ_count" options="optionseasy">
       <span class="percent" ng-bind="{{item.employ_count}}"></span>
     </span>
     <span class="pie-title"> {{item.country}} </span>
-    
+    </span>
   </span>
 
 
@@ -87,7 +87,7 @@
  
 <div class="col-xs-12 col-md-6">
    <div class="panel panel-default">
-    <div class="panel-heading"><span class="glyphicon glyphicon-map-marker marker"></span> This Page is Disabled <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
+    <div class="panel-heading panelfirst"><span class="glyphicon glyphicon-map-marker marker"></span> Company Locations <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
       <div class="panel-body">
         <ui-gmap-google-map 
           center='map.center' 
@@ -118,7 +118,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <div class="col-xs-12 col-md-6">
 
 <div class="panel panel-default">
-    <div class="panel-heading">This Page is Disabled <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
+    <div class="panel-heading panelsecond">This Page is Disabled <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
       <div class="panel-body">This page is temporarily disabled by the site administrator for some reason.<br> <a href="#">Click here</a> to enable the page.
        <p>
        <div class="chart3" google-chart chart="chart3" style="width: 100%;"></div>

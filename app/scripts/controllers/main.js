@@ -29,7 +29,77 @@ angular.module('dashyAppApp')
 	      "window" : {
 	        "title": "Manhattan New York, NY"
 	      }
-	    }
+	    },
+      {
+        "id": "3",
+        "coords": {
+          "latitude": "3.848032",
+          "longitude": "11.502075"
+        },
+        "window" : {
+          "title": "Joseph T A, Yaounde"
+        }
+      },
+      {
+        "id": "4",
+        "coords": {
+          "latitude": "51.048615",
+          "longitude": "-114.070846"
+        },
+        "window" : {
+          "title": "4 St SW, Calgary"
+        }
+      },
+      {
+        "id": "5",
+        "coords": {
+          "latitude": "-14.235004",
+          "longitude": "-51.925280"
+        },
+        "window" : {
+          "title": "Banco De, Brazil"
+        }
+      },
+      {
+        "id": "6",
+        "coords": {
+          "latitude": "31.230416",
+          "longitude": "121.473701"
+        },
+        "window" : {
+          "title": "Shanghai, China"
+        }
+      },
+      {
+        "id": "7",
+        "coords": {
+          "latitude": "55.755826",
+          "longitude": "37.617300"
+        },
+        "window" : {
+          "title": "Moscow, Russia"
+        }
+      },
+      {
+        "id": "8",
+        "coords": {
+          "latitude": "52.520007",
+          "longitude": "13.404954"
+        },
+        "window" : {
+          "title": "Berlin, Germany"
+        }
+      },
+      {
+        "id": "8",
+        "coords": {
+          "latitude": "-33.868820",
+          "longitude": "151.209296"
+        },
+        "window" : {
+          "title": "Sydney, Australia"
+        }
+      }
 	  ];
 	  return Markers;
 	})
@@ -56,7 +126,7 @@ angular.module('dashyAppApp')
   
 	  $scope.map = { 
 	    center: { latitude: 39.8282, longitude: -98.5795 }, 
-	    zoom: 4 
+	    zoom: 1
 	  };
 	  $scope.markers = Markers;
 
@@ -91,16 +161,16 @@ angular.module('dashyAppApp')
 	  chart2.options = {
 	  	title: 'Number of employees at various company locations',
         chartArea: {width: '70%', height: '100%',top:30,bottom:0},
-        isStacked: true,
+        //isStacked: true,
         hAxis: {title: 'employees Number', titleTextStyle: {color: 'red'}},
         colors: ['#0E5660','#70ABAF'],
-        hAxis : {gridlines : {count: 1}},
-        hAxis : {viewWindowMode : 'explicit'},
-        hAxis : {viewWindow : {max : 100}},
+        //hAxis : {gridlines : {count: 1}},
+        //hAxis : {viewWindowMode : 'explicit'},
+        //hAxis : {viewWindow : {max : 100}},
         is3D:true,
-        vAxis: {
+        /*vAxis: {
           title: 'Country'
-        }
+        }*/
       };
 
       chart3.options = {
@@ -108,7 +178,7 @@ angular.module('dashyAppApp')
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
         };
-      chart4.options = {
+    chart4.options = {
       width: 400,
       height: 240,
       animation:{

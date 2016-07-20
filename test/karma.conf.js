@@ -45,6 +45,7 @@ module.exports = function(config) {
       'bower_components/jquery.easy-pie-chart/dist/angular.easypiechart.js',
       'bower_components/Chart.js/Chart.js',
       'bower_components/angular-chart.js/dist/angular-chart.js',
+      'bower_components/angular-ui-clock/dist/angular-clock.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

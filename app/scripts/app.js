@@ -22,7 +22,8 @@ angular
     'googlechart',
     'uiGmapgoogle-maps',
     'easypiechart',
-    'chart.js'
+    'chart.js',
+    'ds.clock'
   ])
   .config(['$stateProvider', '$urlRouterProvider',
    function($stateProvider, $urlRouterProvider) {
@@ -126,6 +127,6 @@ if(!$('.menu li span').hasClass('closed')){
 $('.clickable').on('click',function(){
     var effect = $(this).data('effect');
         $(this).closest('.panel')[effect]();
-	})
+	});
 
 
