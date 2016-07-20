@@ -1,0 +1,54 @@
+{
+  "countries": 
+  [
+	{
+		"country": "Cameroon",
+		"employ_count": 50
+	},
+	{
+		"country": "United States",
+		"employ_count": 738
+	},
+	{
+		"country": "Germany",
+		"employ_count": 269
+	},
+	{
+		"country": "Brazil",
+		"employ_count": 937
+	},
+	{
+		"country": "Australia",
+		"employ_count": 958
+	},
+	{
+		"country": "Canada",
+		"employ_count": 193
+	},
+	{
+		"country": "China",
+		"employ_count": 158
+	},
+	{
+		"country": "Russia",
+		"employ_count": 58
+	}
+  ],
+"issues": 
+  [
+	{
+		"country": "Cameroon",
+		"employ_count": 50,
+		"allissues": 50,
+		"open_issues": 25,
+		"closed_issues": 25
+	},
+	{
+		"country": "United States",
+		"employ_count": 738,
+		"allissues": 102,
+		"open_issues": 2,
+		"closed_issues": 100
+	}
+]
+}

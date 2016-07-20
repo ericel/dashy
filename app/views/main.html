@@ -47,56 +47,45 @@
     <li><a href="#stat2" data-toggle="tab"><span class="glyphicon"></span> Menu 2</a></li>
     <li><a href="#stat3" data-toggle="tab"><span class="glyphicon"></span> Menu 3</a></li>
   </ul>
+  <div class="clearfix"></div>
   </div>
    <div class="tab-content bor-der">
     <div id="stat1" class="tab-pane fade in active">
     <div class="row">
-      <div class="col-sm-6 col-md-5 col-lg-6 geospartial">
+      <div class="col-xs-12 col-md-6 geospartial">
           <div google-chart chart="chart"></div>
       </div>
-      <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0 bar-chart">
+      <div class="col-xs-12 col-md-6 bar-chart">
         <div google-chart chart="chart2" style="width: 99%; height:90%;"></div>
-      </div>
-      <div>
-      Hello world
+         <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"  height="90"></canvas>
       </div>
     </div>
     </div>
-    <div id="stat2" class="tab-pane fade">
-        Another Some graphs coming here soon
+    <div id="stat2" class="tab-pane fade" style="width: 99%; height:20%;">
+       <div  style="display: block; box-sizing: border-box;" class="conatainer">
+        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"  width="300" height="300"></canvas>
+        </div>
     </div>
     <div id="stat3" class="tab-pane fade">
-       some Another Some graphs coming here soon
+       <div  class="chart4" google-chart chart="chart4" style="width: 99%; height:90%;"></div>
     </div>
   </div>
   <div class="box-2-semi-up">
-  <div class="angular-easy">
-     <span class="chart" easypiechart ng-init="options = { animate:true, duration:20, barColor:'#E67E22', scaleColor:false, lineWidth:3, lineCap:'butt' }" percent="percenteasy" options="optionseasy">
-      <span class="percent" ng-bind="percenteasy"></span>
-      <span class="glyphicon glyphicon-chevron-down stat red"></span><span class="pie-title">some time</span>
-    </span>
 
-    <span class="chart" easypiechart ng-init="options = { animate:true, duration:20, barColor:'#E67E22', scaleColor:false, lineWidth:3, lineCap:'butt' }" percent="percenteasy" options="optionseasy">
-      <span class="percent" ng-bind="percenteasy"></span>
-      <span class="glyphicon glyphicon-chevron-down stat red"></span><span class="pie-title">some time</span>
+    <span class="" ng-repeat="item in items.countries">
+    <span class="chart" easypiechart ng-init="options = { animate:true, duration:1000, barColor:'#E67E22', scaleColor:true, lineWidth:1, lineCap:'butt' }" percent = "item.employ_count" options="optionseasy">
+      <span class="percent" ng-bind="{{item.employ_count}}"></span>
     </span>
-
-    <span class="chart" easypiechart ng-init="options = { animate:true, duration:20, barColor:'#E67E22', scaleColor:false, lineWidth:3, lineCap:'butt' }" percent="percenteasy" options="optionseasy">
-      <span class="percent" ng-bind="percenteasy"></span>
-      <span class="glyphicon glyphicon-chevron-down stat red"></span><span class="pie-title">some time</span>
-    </span>
-
-    <span class="chart" easypiechart ng-init="options = { animate:true, duration:20, barColor:'#E67E22', scaleColor:false, lineWidth:3, lineCap:'butt' }" percent="percenteasy" options="optionseasy">
-      <span class="percent" ng-bind="percenteasy"></span>
-      <span class="glyphicon glyphicon-chevron-down stat red"></span><span class="pie-title">some time</span>
-    </span>
+    <span class="pie-title"> {{item.country}} </span>
     
-    </div>
-  </div>
+  </span>
+
+
 </div>
 </section>
-<section class="sec-2">
-<div class="col-sm-6 col-md-5 col-lg-6">
+<section class="sec-2 row">
+ 
+<div class="col-xs-12 col-md-6">
    <div class="panel panel-default">
     <div class="panel-heading"><span class="glyphicon glyphicon-map-marker marker"></span> This Page is Disabled <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
       <div class="panel-body">
@@ -125,14 +114,14 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
   </div>
 
 </div>
-<div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">
+
+<div class="col-xs-12 col-md-6">
 
 <div class="panel panel-default">
     <div class="panel-heading">This Page is Disabled <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
       <div class="panel-body">This page is temporarily disabled by the site administrator for some reason.<br> <a href="#">Click here</a> to enable the page.
        <p>
-        What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+       <div class="chart3" google-chart chart="chart3" style="width: 100%;"></div>
       </p>
 
       </div>
@@ -149,6 +138,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 </div>
+<div class="clearfix"></div>
 </section>
 
 

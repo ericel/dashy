@@ -39,7 +39,6 @@ angular.module('dashyAppApp')
     employees.getEmployees().then(function(data) {
 		_this.items = data;
 	    $scope.items = _this.items;
-      console.log(_this.items.countries.country);
      var employeesArray = _this.items.countries.map(function(v) {
 		  return [v.country, v.employ_count];
 		});
@@ -53,7 +52,7 @@ angular.module('dashyAppApp')
 
 	employeesArray.insert(0, ['Locale', 'Count']);
 	issuesArray.insert(0, ['Locale', 'Count', 'Issues', 'Open Issues', 'Closed Issues']);
-  
+   console.log(employeesArray);
 	  $scope.map = { 
 	    center: { latitude: 39.8282, longitude: -98.5795 }, 
 	    zoom: 4 
@@ -75,7 +74,7 @@ angular.module('dashyAppApp')
 	  chart3.data = employeesArray;
 
 	  chart4.data = issuesArray;
-    
+
 	  chart1.options = {
 	    width: '100%',
 	    height: 300,
@@ -131,39 +130,50 @@ angular.module('dashyAppApp')
 	  $scope.chart4 = chart4;
 
 
-	$scope.labels = ["Cameroon", "united States", "France", "Germany", "Australia", "Russia", "Brazil"];
-  $scope.series = ['Employees', 'Issues', 'Open Issues', 'Closed Issues'];
-  $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40],
-    [28, 48, 40, 19, 86, 27, 90],
-    [38, 9, 50, 78, 43, 60, 50],
-    [20, 6, 8, 15, 12, 3, 10]
-  ];
-  $scope.onClick = function (points, evt) {
-    console.log(points, evt);
-  };
-  $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
-  $scope.options = {
-    responsive : true,
-    maintainAspectRatio: false,
-    scales: {
-      yAxes: [
-        {
-          id: 'y-axis-1',
-          type: 'linear',
-          display: true,
-          position: 'left'
+	       $scope.options = {
+      scales: {
+        xAxes: [{
+          display: false,
+          ticks: {
+            max: 125,
+            min: -125,
+            stepSize: 10
+          }
+        }],
+        yAxes: [{
+          display: false,
+          ticks: {
+            max: 125,
+            min: -125,
+            stepSize: 10
+          }
+        }]
+      }
+    };
 
-        },
-        {
-          id: 'y-axis-2',
-          type: 'linear',
-          display: true,
-          position: 'right'
-        }
-      ]
+    createChart();
+    $interval(createChart, 2000);
+
+    function createChart () {
+      $scope.series = [];
+      $scope.data = [];
+      for (var i = 0; i < 50; i++) {
+        $scope.series.push(`Series ${i}`);
+        $scope.data.push([{
+          x: randomScalingFactor(),
+          y: randomScalingFactor(),
+          r: randomRadius()
+        }]);
+      }
     }
-  };
+
+    function randomScalingFactor () {
+      return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+    }
+
+    function randomRadius () {
+      return Math.abs(randomScalingFactor()) / 4;
+    }
 
 
 
