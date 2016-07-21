@@ -250,8 +250,13 @@ angular.module('dashyAppApp')
     }
   };
 
- var sumemp = employ_countsArray.reduce((a, b) => a + b, 0);
- var sumIssu = allissuesArray.reduce((a, b) => a + b, 0);
+ /*var sumemp = employ_countsArray.reduce((a, b) => a + b, 0);
+ var sumIssu = allissuesArray.reduce((a, b) => a + b, 0);*/
+ var sumemp = employ_countsArray.reduce(add, 0);
+
+  function add(a, b) {
+      return a + b;
+  }
   var count = 0;
 
   var inTv = setInterval(function(){startCount()},10);

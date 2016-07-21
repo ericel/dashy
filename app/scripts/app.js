@@ -26,8 +26,9 @@ angular
     'ds.clock',
     'datatables'
   ])
-  .config(['$stateProvider', '$urlRouterProvider',
-   function($stateProvider, $urlRouterProvider) {
+  .config(['$controllerProvider', '$stateProvider', '$urlRouterProvider',
+   function($controllerProvider, $stateProvider, $urlRouterProvider) {
+    $controllerProvider.allowGlobals();
   	$urlRouterProvider.otherwise('/home');
    
   	$stateProvider
