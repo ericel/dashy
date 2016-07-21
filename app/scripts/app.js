@@ -29,6 +29,7 @@ angular
   .config(['$controllerProvider', '$stateProvider', '$urlRouterProvider',
    function($controllerProvider, $stateProvider, $urlRouterProvider) {
     $controllerProvider.allowGlobals();
+    
   	$urlRouterProvider.otherwise('/home');
    
   	$stateProvider
