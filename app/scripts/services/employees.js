@@ -10,6 +10,6 @@
 angular.module('dashyAppApp')
   .service('employees', function ($http) {
     this.getEmployees = function() {
-      return $.get( '/data/employee.json' );
+      return $.get( './data/employee.json' );
     };
   });
