@@ -23,7 +23,8 @@ angular
     'uiGmapgoogle-maps',
     'easypiechart',
     'chart.js',
-    'ds.clock'
+    'ds.clock',
+    'datatables'
   ])
   .config(['$stateProvider', '$urlRouterProvider',
    function($stateProvider, $urlRouterProvider) {

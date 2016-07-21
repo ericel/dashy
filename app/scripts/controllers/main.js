@@ -109,7 +109,22 @@ angular.module('dashyAppApp')
     employees.getEmployees().then(function(data) {
 		_this.items = data;
 	    $scope.items = _this.items;
-      console.log(_this.items.countries.country);
+     var countrysArray = _this.items.countries.map(function(v) {
+      return v.country;
+    });
+    var employ_countsArray = _this.items.countries.map(function(v) {
+      return v.employ_count;
+    });
+    var allissuesArray = _this.items.countries.map(function(v) {
+      return v.allissues;
+    });
+    var openISsArray = _this.items.countries.map(function(v) {
+      return v.open_issues;
+    });
+    var closedISsArray = _this.items.countries.map(function(v) {
+      return v.closed_issues;
+    });
+     
      var employeesArray = _this.items.countries.map(function(v) {
 		  return [v.country, v.employ_count];
 		});
@@ -201,13 +216,13 @@ angular.module('dashyAppApp')
 	  $scope.chart4 = chart4;
 
 
-	$scope.labels = ["Cameroon", "united States", "France", "Germany", "Australia", "Russia", "Brazil"];
+	$scope.labels = countrysArray;
   $scope.series = ['Employees', 'Issues', 'Open Issues', 'Closed Issues'];
   $scope.data = [
-    [65, 59, 80, 81, 56, 55, 40],
-    [28, 48, 40, 19, 86, 27, 90],
-    [38, 9, 50, 78, 43, 60, 50],
-    [20, 6, 8, 15, 12, 3, 10]
+    employ_countsArray,
+    allissuesArray,
+    openISsArray,
+    closedISsArray
   ];
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
@@ -235,9 +250,28 @@ angular.module('dashyAppApp')
     }
   };
 
+ var sumemp = employ_countsArray.reduce((a, b) => a + b, 0);
+ var sumIssu = allissuesArray.reduce((a, b) => a + b, 0);
+  var count = 0;
 
+  var inTv = setInterval(function(){startCount()},10);
 
-      });
+  function startCount()
+  {
+      if(count == sumemp) {
+          clearInterval(inTv);
+      } else {
+          count++;
+      }
+      $('.stats_em').text(count); 
+     
+  }
+
+//datatables
+$scope.orderProp = 's_time';
+//$scope.quantity = 5;
+
+});
 
     //$scope.percenteasy = 65;
         $scope.optionseasy = {
@@ -250,18 +284,8 @@ angular.module('dashyAppApp')
             lineWidth:9,
             lineCap:'circle'
         };
+ 
 });
-var count = 0,
-	max = 1029;
-var inTv = setInterval(function(){startCount()},10);
-function startCount()
-{
-    if(count == max) {
-        clearInterval(inTv);
-    } else {
-        count++;
-    }
-    
-    $('.stats_em').text(count); 
-}
+
+
 

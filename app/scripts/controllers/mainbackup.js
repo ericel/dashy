@@ -29,7 +29,77 @@ angular.module('dashyAppApp')
 	      "window" : {
 	        "title": "Manhattan New York, NY"
 	      }
-	    }
+	    },
+      {
+        "id": "3",
+        "coords": {
+          "latitude": "3.848032",
+          "longitude": "11.502075"
+        },
+        "window" : {
+          "title": "Joseph T A, Yaounde"
+        }
+      },
+      {
+        "id": "4",
+        "coords": {
+          "latitude": "51.048615",
+          "longitude": "-114.070846"
+        },
+        "window" : {
+          "title": "4 St SW, Calgary"
+        }
+      },
+      {
+        "id": "5",
+        "coords": {
+          "latitude": "-14.235004",
+          "longitude": "-51.925280"
+        },
+        "window" : {
+          "title": "Banco De, Brazil"
+        }
+      },
+      {
+        "id": "6",
+        "coords": {
+          "latitude": "31.230416",
+          "longitude": "121.473701"
+        },
+        "window" : {
+          "title": "Shanghai, China"
+        }
+      },
+      {
+        "id": "7",
+        "coords": {
+          "latitude": "55.755826",
+          "longitude": "37.617300"
+        },
+        "window" : {
+          "title": "Moscow, Russia"
+        }
+      },
+      {
+        "id": "8",
+        "coords": {
+          "latitude": "52.520007",
+          "longitude": "13.404954"
+        },
+        "window" : {
+          "title": "Berlin, Germany"
+        }
+      },
+      {
+        "id": "8",
+        "coords": {
+          "latitude": "-33.868820",
+          "longitude": "151.209296"
+        },
+        "window" : {
+          "title": "Sydney, Australia"
+        }
+      }
 	  ];
 	  return Markers;
 	})
@@ -39,6 +109,22 @@ angular.module('dashyAppApp')
     employees.getEmployees().then(function(data) {
 		_this.items = data;
 	    $scope.items = _this.items;
+     var countrysArray = _this.items.countries.map(function(v) {
+      return v.country;
+    });
+    var employ_countsArray = _this.items.countries.map(function(v) {
+      return v.employ_count;
+    });
+    var allissuesArray = _this.items.countries.map(function(v) {
+      return v.allissues;
+    });
+    var openISsArray = _this.items.countries.map(function(v) {
+      return v.open_issues;
+    });
+    var closedISsArray = _this.items.countries.map(function(v) {
+      return v.closed_issues;
+    });
+     console.log(countrysArray);
      var employeesArray = _this.items.countries.map(function(v) {
 		  return [v.country, v.employ_count];
 		});
@@ -52,10 +138,10 @@ angular.module('dashyAppApp')
 
 	employeesArray.insert(0, ['Locale', 'Count']);
 	issuesArray.insert(0, ['Locale', 'Count', 'Issues', 'Open Issues', 'Closed Issues']);
-   console.log(employeesArray);
+  
 	  $scope.map = { 
 	    center: { latitude: 39.8282, longitude: -98.5795 }, 
-	    zoom: 4 
+	    zoom: 1
 	  };
 	  $scope.markers = Markers;
 
@@ -74,7 +160,7 @@ angular.module('dashyAppApp')
 	  chart3.data = employeesArray;
 
 	  chart4.data = issuesArray;
-
+    
 	  chart1.options = {
 	    width: '100%',
 	    height: 300,
@@ -90,16 +176,16 @@ angular.module('dashyAppApp')
 	  chart2.options = {
 	  	title: 'Number of employees at various company locations',
         chartArea: {width: '70%', height: '100%',top:30,bottom:0},
-        isStacked: true,
+        //isStacked: true,
         hAxis: {title: 'employees Number', titleTextStyle: {color: 'red'}},
         colors: ['#0E5660','#70ABAF'],
-        hAxis : {gridlines : {count: 1}},
-        hAxis : {viewWindowMode : 'explicit'},
-        hAxis : {viewWindow : {max : 100}},
+        //hAxis : {gridlines : {count: 1}},
+        //hAxis : {viewWindowMode : 'explicit'},
+        //hAxis : {viewWindow : {max : 100}},
         is3D:true,
-        vAxis: {
+        /*vAxis: {
           title: 'Country'
-        }
+        }*/
       };
 
       chart3.options = {
@@ -107,7 +193,7 @@ angular.module('dashyAppApp')
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
         };
-      chart4.options = {
+    chart4.options = {
       width: 400,
       height: 240,
       animation:{
@@ -130,50 +216,40 @@ angular.module('dashyAppApp')
 	  $scope.chart4 = chart4;
 
 
-	       $scope.options = {
-      scales: {
-        xAxes: [{
-          display: false,
-          ticks: {
-            max: 125,
-            min: -125,
-            stepSize: 10
-          }
-        }],
-        yAxes: [{
-          display: false,
-          ticks: {
-            max: 125,
-            min: -125,
-            stepSize: 10
-          }
-        }]
-      }
-    };
+	$scope.labels = countrysArray;
+  console.log($scope.labels);
+  $scope.series = ['Employees', 'Issues', 'Open Issues', 'Closed Issues'];
+  $scope.data = [
+    employ_countsArray,
+    allissuesArray,
+    openISsArray,
+    closedISsArray
+  ];
+  $scope.onClick = function (points, evt) {
+    console.log(points, evt);
+  };
+  $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+  $scope.options = {
+    responsive : true,
+    maintainAspectRatio: false,
+    scales: {
+      yAxes: [
+        {
+          id: 'y-axis-1',
+          type: 'linear',
+          display: true,
+          position: 'left'
 
-    createChart();
-    $interval(createChart, 2000);
-
-    function createChart () {
-      $scope.series = [];
-      $scope.data = [];
-      for (var i = 0; i < 50; i++) {
-        $scope.series.push(`Series ${i}`);
-        $scope.data.push([{
-          x: randomScalingFactor(),
-          y: randomScalingFactor(),
-          r: randomRadius()
-        }]);
-      }
+        },
+        {
+          id: 'y-axis-2',
+          type: 'linear',
+          display: true,
+          position: 'right'
+        }
+      ]
     }
-
-    function randomScalingFactor () {
-      return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
-    }
-
-    function randomRadius () {
-      return Math.abs(randomScalingFactor()) / 4;
-    }
+  };
 
 
 

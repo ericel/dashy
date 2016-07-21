@@ -1,1 +1,24 @@
-<p>This is the dashy3 view.</p>
+  <table datatable="ng" class="row-border hover">
+    <thead>
+     <tr>
+       <th>Country</th>
+         <th>Customer Email</th>
+         <th>Issue</th>
+         <th>Sub. Date</th>
+         <th>Closed. Date</th>
+         <th>Employee</th>
+         <th>status</th>
+         </tr>
+          </thead>
+          <tbody>
+         <tr ng-repeat="issue in items.issues | orderBy:orderProp">
+          <td>{{ issue.country }}</td>
+          <td>{{ issue.cust_email }}</td>
+          <td>{{ issue.issu_des }}</td>
+          <td>{{ issue.s_time }}</td>
+          <td>{{ issue.issu_closed_time }}</td>
+          <td>{{ issue.cus_name }}</td>
+          <td>{{ issue.emplo_closed_name }}</td> 
+      </tr>
+    </tbody>
+  </table>
