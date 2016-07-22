@@ -1,17 +1,4 @@
 {
-  "persons": 
-  [
-	{
-		"id": 1,
-		"firstname": "manu",
-		"lastname": "james"
-	},
-	{
-		"id": 2,
-		"firstname": "melvis",
-		"lastname": "maskd"
-	}
-],
   "countries": 
   [
 	{
@@ -19,56 +6,80 @@
 		"employ_count": 50,
 		"allissues": 50,
 		"open_issues": 25,
-		"closed_issues": 25
+		"closed_issues": 25,
+      "manager": "Oj Obasi",
+      "commpanyname": "Afrolinked",
+      "payin_cust": 383
 	},
 	{
 		"country": "United States",
 		"employ_count": 738,
 		"allissues": 100,
 		"open_issues": 20,
-		"closed_issues": 80
+		"closed_issues": 80,
+      "manager": "Mponge Victoire",
+      "commpanyname": "Udacity",
+      "payin_cust": 1736
 	},
 	{
 		"country": "Germany",
 		"employ_count": 269,
 		"allissues": 50,
 		"open_issues": 2,
-		"closed_issues": 48
+		"closed_issues": 48,
+      "manager": "Melissa Shuako",
+      "commpanyname": "Gemsco Vs",
+      "payin_cust": 542
 	},
 	{
 		"country": "Brazil",
 		"employ_count": 937,
 		"allissues": 170,
 		"open_issues": 70,
-		"closed_issues": 100
+		"closed_issues": 100,
+      "manager": "Ronado Marco",
+      "commpanyname": "Brasco Intl",
+      "payin_cust": 1034
 	},
 	{
 		"country": "Australia",
 		"employ_count": 958,
 		"allissues": 250,
 		"open_issues": 50,
-		"closed_issues": 200
+		"closed_issues": 200,
+      "manager": "Kim Gear",
+      "commpanyname": "Kangross Co.",
+      "payin_cust": 645
 	},
 	{
 		"country": "Canada",
 		"employ_count": 193,
 		"allissues": 70,
 		"open_issues": 5,
-		"closed_issues": 65
+		"closed_issues": 65,
+      "manager": "John Wilson",
+      "commpanyname": "Prackray",
+      "payin_cust": 362
 	},
 	{
 		"country": "China",
 		"employ_count": 158,
 		"allissues": 135,
 		"open_issues": 4,
-		"closed_issues": 131
+		"closed_issues": 131,
+      "manager": "John Njock",
+      "commpanyname": "Alibaba",
+      "payin_cust": 297
 	},
 	{
 		"country": "Russia",
 		"employ_count": 58,
 		"allissues": 39,
 		"open_issues": 11,
-		"closed_issues": 28
+		"closed_issues": 28,
+      "manager": "Ivankovs Ko",
+      "commpanyname": "Msvon St",
+      "payin_cust": 82
 	}
   ],
 "issues": 
