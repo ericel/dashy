@@ -19,7 +19,7 @@ angular
     'ngTouch',
     'ui.router',
     'ui.router.title',
-    //'googlechart',
+    'googlechart',
     //'uiGmapgoogle-maps',
     'easypiechart',
     'chart.js',
