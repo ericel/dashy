@@ -104,7 +104,7 @@ angular.module('dashyAppApp')
 	  return Markers;
 	})
 
-.controller('MainCtrl', function ($scope, employees, Markers, $interval) {
+.controller('MainCtrl', function ($scope, employees, Markers, $interval, $timeout) {
 	var _this = this;
     employees.getEmployees().then(function(data) {
 		_this.items = data;

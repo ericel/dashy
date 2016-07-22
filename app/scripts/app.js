@@ -20,7 +20,6 @@ angular
     'ui.router',
     'ui.router.title',
     'googlechart',
-    //'uiGmapgoogle-maps',
     'easypiechart',
     'chart.js',
     'ds.clock',

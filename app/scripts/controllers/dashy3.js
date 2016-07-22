@@ -15,3 +15,4 @@ angular.module('dashyAppApp')
 		$scope.items = _this.items;
 	});
   });
+$("#querydatatablesets").css("width","100%");
