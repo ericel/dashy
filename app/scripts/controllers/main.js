@@ -128,9 +128,14 @@ angular.module('dashyAppApp')
      var employeesArray = _this.items.countries.map(function(v) {
 		  return [v.country, v.employ_count];
 		});
+
      var issuesArray = _this.items.issues.map(function(v) {
 		  return [v.country, v.employ_count, v.allissues, v.open_issues, v.closed_issues];
 		});
+
+    var payin_custArray = _this.items.issues.map(function(v) {
+      return v.payin_cust;
+    });
 
     Array.prototype.insert = function (index, item) {
 		  this.splice(index, 0, item);
@@ -281,42 +286,36 @@ angular.module('dashyAppApp')
     }
   };
   
- /*var sumemp = employ_countsArray.reduce((a, b) => a + b, 0);
- var sumIssu = allissuesArray.reduce((a, b) => a + b, 0);*/
- var sumemp = employ_countsArray.reduce(add, 0);
- var sumallis = allissuesArray.reduce(add, 0);
 
-  function add(a, b) {
-      return a + b;
-  }
-  var count = 0;
-
-  var inTv = setInterval(function(){startCount()},10);
-
-  var inTv2 = setInterval(function(){startCount2()},10);
-
-  function startCount()
-  {
-      if(count == sumemp) {
-          clearInterval(inTv);
-      } else {
-          count++;
-      }
-      $('.stats_em').text(count); 
+ $.fn.countTo = function(arrNums){
+   var self = this;
+   function add(a,b){
+       return a+b;  
+   }
+  
+   var current = 0;
+   var max = arrNums.reduce(add,0);
+  
+   var int = setInterval(function(){
+       if(current == max)
+         clearInterval(int);
+       else
+         current++;
      
-  }
+     self.text(current);
+   },100);
+  return this;
+}
 
-  var count2 = 10;
-  function startCount2()
-  {
-      if(count2 == sumallis) {
-          clearInterval(inTv2);
-      } else {
-          count2++;
-      }
-      $('.stats_iss').text(count2); 
-     
-  }
+
+$('.stats_em').countTo(employ_countsArray);
+$('.stats_iss').countTo(allissuesArray);
+$('.stats_open').countTo(openISsArray);
+$('.stats_cl').countTo(closedISsArray);
+$('.stats_py').countTo(payin_custArray);
+$('.stats_cu').countTo(payin_custArray);
+
+
 
 //datatables
 $scope.orderProp = 's_time';
