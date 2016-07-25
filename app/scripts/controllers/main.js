@@ -217,13 +217,44 @@ angular.module('dashyAppApp')
 
 
 	$scope.labels = countrysArray;
-  $scope.series = ['Employees', 'Issues', 'Open Issues', 'Closed Issues'];
-  $scope.data = [
+  $scope.series = ['Employees', 'Issues', 'Open Issues', 'Closed Issues', 'Some'];
+  var arr = [];
+  $interval(function(){   
+    var max = 208,
+    min = 200;
+    /*for (var i=200, t=208; i<t; i++) {
+        arr.push(Math.round(Math.random() * (t - min) + min));
+    }*/
+    var num = Math.floor((Math.random() * 900) + 100);
+    var numIs = Math.floor((Math.random() * 500) + 200);
+    var numclIs = Math.floor((Math.random() * 700) + 50);
+    var numemIs = Math.floor((Math.random() * 900) + 30);
+    var numemIss = Math.floor((Math.random() * 511) + 110);
+    //$scope.arr = arr; 
+  
+   //arr.push(arr);
+  allissuesArray.splice(2, 1, num);
+  allissuesArray.splice(4, 1, numIs);
+  allissuesArray.splice(3, 1, numemIss);
+  allissuesArray.splice(5, 1, numemIs);
+  openISsArray.splice(4, 1, numIs);
+  openISsArray.splice(5, 1, numemIss);
+  openISsArray.splice(2, 1, num);
+  closedISsArray.splice(1, 1, numclIs);
+  employ_countsArray.splice(5, 1, numemIss);
+  employ_countsArray.splice(6, 1, num);
+  employ_countsArray.splice(4, 1, numIs);
+  employ_countsArray.splice(3, 1, numclIs);
+   }, 3500);
+
+ $scope.data = [
+    
     employ_countsArray,
     allissuesArray,
     openISsArray,
-    closedISsArray
+    closedISsArray,
   ];
+
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
   };
@@ -249,10 +280,11 @@ angular.module('dashyAppApp')
       ]
     }
   };
-
+  
  /*var sumemp = employ_countsArray.reduce((a, b) => a + b, 0);
  var sumIssu = allissuesArray.reduce((a, b) => a + b, 0);*/
  var sumemp = employ_countsArray.reduce(add, 0);
+ var sumallis = allissuesArray.reduce(add, 0);
 
   function add(a, b) {
       return a + b;
@@ -260,6 +292,8 @@ angular.module('dashyAppApp')
   var count = 0;
 
   var inTv = setInterval(function(){startCount()},10);
+
+  var inTv2 = setInterval(function(){startCount2()},10);
 
   function startCount()
   {
@@ -269,6 +303,18 @@ angular.module('dashyAppApp')
           count++;
       }
       $('.stats_em').text(count); 
+     
+  }
+
+  var count2 = 10;
+  function startCount2()
+  {
+      if(count2 == sumallis) {
+          clearInterval(inTv2);
+      } else {
+          count2++;
+      }
+      $('.stats_iss').text(count2); 
      
   }
 
@@ -292,5 +338,18 @@ $scope.orderProp = 's_time';
  
 });
 
+// create the custom `partyTime` event
+/*  var myCustomEvent= new CustomEvent( 'partyTime', {timeToParty: true, partyYear: 1999} );
+     var partyYear = 1999;
+          // listen to the `document` for the `partyTime` event
+          document.addEventListener('partyTime', function(evt) {
+              if (evt.partyYear) {
+                  console.log( "Partying like it's " + evt.partyYear + "!");
+              }
 
+              document.body.style.backgroundImage = 'linear-gradient(30deg, gray, white)';
+     });
+          // trigger the custom event
+   document.dispatchEvent( myCustomEvent );
+*/
 

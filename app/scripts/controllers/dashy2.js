@@ -53,18 +53,45 @@ angular.module('dashyAppApp')
 
 	    allissuesArray
 
-	  ]; }, 500);
+	  ]; }, 100);
 
 
 	  $scope.labels = countrysArray;
 	  $scope.series = ['Employees', 'Issues', 'Open Issues', 'Closed Issues'];
+	$interval(function(){   
+    //var max = 208,
+    //min = 200;
+    /*for (var i=200, t=208; i<t; i++) {
+        arr.push(Math.round(Math.random() * (t - min) + min));
+    }*/
+    var num = Math.floor((Math.random() * 900) + 100);
+    var numIs = Math.floor((Math.random() * 500) + 200);
+    var numclIs = Math.floor((Math.random() * 700) + 50);
+    var numemIs = Math.floor((Math.random() * 900) + 30);
+    var numemIss = Math.floor((Math.random() * 511) + 110);
+    //$scope.arr = arr; 
+  
+   //arr.push(arr);
+	  allissuesArray.splice(2, 1, num);
+	  allissuesArray.splice(4, 1, numIs);
+	  allissuesArray.splice(3, 1, numemIss);
+	  allissuesArray.splice(5, 1, numemIs);
+	  openISsArray.splice(4, 1, numIs);
+	  openISsArray.splice(5, 1, numemIss);
+	  openISsArray.splice(2, 1, num);
+	  closedISsArray.splice(1, 1, numclIs);
+	  employ_countsArray.splice(5, 1, numemIss);
+	  employ_countsArray.splice(6, 1, num);
+	  employ_countsArray.splice(4, 1, numIs);
+	  employ_countsArray.splice(3, 1, numclIs);
+	   }, 3500);
+	 $timeout(function () {
 	  $scope.data = [
 	    employ_countsArray,
 	    allissuesArray,
 	    openISsArray,
 	    closedISsArray
-	  ];
-
+	  ];}, 100);
 	  $scope.seriespaying_cust = ['Paying Customers'];
 	   $timeout(function () {
 	   	$scope.datapaying_cust = [
