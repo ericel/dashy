@@ -8,7 +8,7 @@
  * Controller of the dashyAppApp
  */
 angular.module('dashyAppApp')
-	.factory("Markers", function(){
+	/*.factory("Markers", function(){
 	  var Markers = [
 	    {
 	      "id": "0",
@@ -102,9 +102,9 @@ angular.module('dashyAppApp')
       }
 	  ];
 	  return Markers;
-	})
-
-.controller('MainCtrl', function ($scope, employees, Markers, $interval, $timeout) {
+	}) Markers,
+*/
+.controller('MainCtrl', function ($scope, employees,  $interval, $timeout) {
 	var _this = this;
     employees.getEmployees().then(function(data) {
 		_this.items = data;
@@ -144,27 +144,17 @@ angular.module('dashyAppApp')
 	employeesArray.insert(0, ['Locale', 'Count']);
 	issuesArray.insert(0, ['Locale', 'Count', 'Issues', 'Open Issues', 'Closed Issues']);
   
-	  $scope.map = { 
+	 /* $scope.map = { 
 	    center: { latitude: 39.8282, longitude: -98.5795 }, 
 	    zoom: 1
 	  };
 	  $scope.markers = Markers;
-
+   */
 	  var chart1 = {};
-	  var chart2 = {};
-	  var chart3 = {};
-	  var chart4 = {};
-	  chart1.type = "GeoChart";
-	  chart2.type = "BarChart";
-	  chart3.type = "AreaChart";
-	  chart4.type = "ComboChart";
-	  chart1.data = employeesArray;
 	 
-	  chart2.data = employeesArray;
-
-	  chart3.data = employeesArray;
-
-	  chart4.data = issuesArray;
+	  chart1.type = "GeoChart";
+	 
+	  chart1.data = employeesArray;
     
 	  chart1.options = {
 	    width: '100%',
@@ -178,35 +168,7 @@ angular.module('dashyAppApp')
         defaultColor: '#f5f5f5'
 	  };
 
-	  chart2.options = {
-	  	title: 'Number of employees at various company locations',
-        chartArea: {width: '70%', height: '100%',top:30,bottom:0},
-        //isStacked: true,
-        hAxis: {title: 'employees Number', titleTextStyle: {color: 'red'}},
-        colors: ['#0E5660','#70ABAF'],
-        //hAxis : {gridlines : {count: 1}},
-        //hAxis : {viewWindowMode : 'explicit'},
-        //hAxis : {viewWindow : {max : 100}},
-        is3D:true,
-        /*vAxis: {
-          title: 'Country'
-        }*/
-      };
 
-      chart3.options = {
-          title: 'Company Performance',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
-        };
-    chart4.options = {
-      width: 400,
-      height: 240,
-      animation:{
-        duration: 1000,
-        easing: 'out',
-      },
-      vAxis: {minValue:0, maxValue:1000}
-     };
 
 	  chart1.formatters = {
 	    number : [{
@@ -216,9 +178,10 @@ angular.module('dashyAppApp')
 	  };
 
 	  $scope.chart = chart1;
-	  $scope.chart2 = chart2;
-	  $scope.chart3 = chart3;
-	  $scope.chart4 = chart4;
+
+
+  $scope.labelspie = countrysArray;
+  $scope.datapie = employ_countsArray;
 
 
 	$scope.labels = countrysArray;

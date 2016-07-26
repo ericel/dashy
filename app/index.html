@@ -19,7 +19,7 @@
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
-  <link rel="icon" sizes="192x192" href="images/favicon.ico">
+  <link rel="icon" sizes="192x192" href="/favicon.ico">
 
   <!-- Add to homescreen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -67,6 +67,7 @@
             </ul>
             <div class="pull-right"> 
              <span class="glyphicon glyphicon-time"></span> <ds-widget-clock show-digital digital-format="format"></ds-widget-clock> <span class="glyphicon glyphicon-option-vertical icon-menu"></span>
+             <span class="circle"><img src="/images/yeoman.png" alt="User"></span>
               </div>
           </div>
 
@@ -86,17 +87,19 @@
           <div class="pull-right">
           
           <div class=" searchform pull-left">
+          <form role="form">
            <div class="input-group">
               <input type="text" class="form-control" placeholder="Search for...">
               <span class="input-group-btn">
                 <button class="btn btn-secondary" type="button">Go!</button>
               </span>
             </div>
-          </div>
+            </form>
+            </div>
           
          
       
-            <i class="glyphicon glyphicon-search pull-right searchbtn"></i>
+            <b class="glyphicon glyphicon-search pull-right searchbtn"></b>
 
           </div>
 
@@ -105,22 +108,21 @@
      <nav>
         <ul class="menu" >
             <li>
-              <i class="glyphicon glyphicon-lamp"></i>
+              <b class="glyphicon glyphicon-lamp"></b>
                <span>Dashy</span>
               </li>  
-               <li><a data-toggle="collapse" data-parent="#accordion" href="#dashboards"><i class="glyphicon glyphicon-home" ></i> <span>Dashboards</span></a> </li>
+               <li><a data-toggle="collapse" data-parent="#accordion" href="#dashboards"><b class="glyphicon glyphicon-home" ></b> <span>Dashboards</span></a> </li>
                <ul id="dashboards" class="collapse">
-                   <li><a ui-sref="home"><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 1</span></a></li>
-                   <li><a ui-sref="dashykeymetrics"><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 2</span></a></li>
-                   <li><a ui-sref="dashydataview"><i class="glyphicon glyphicon-dashboard"></i> <span>Dashboard 3</span></a></li>
+                   <li><a ui-sref="dashykeymetrics"><b class="glyphicon glyphicon-dashboard"></b> <span>Dashboard 2</span></a></li>
+                   <li><a ui-sref="dashydataview"><b class="glyphicon glyphicon-dashboard"></b> <span>Dashboard 3</span></a></li>
                 </ul>
-               <li><i class="glyphicon glyphicon-object-align-bottom"></i> <span>Charts</span></li>
-               <li><i class="glyphicon glyphicon-flash"></i> <span>Flashy</span></li> 
-               <li><i class="glyphicon glyphicon-sound-7-1"></i>  <span>links</span></li>
-               <li><i class="glyphicon glyphicon-stats"></i> <span>links</span></li> 
+               <li><b class="glyphicon glyphicon-object-align-bottom"></b> <span>Charts</span></li>
+               <li><b class="glyphicon glyphicon-flash"></b> <span>Flashy</span></li> 
+               <li><b class="glyphicon glyphicon-sound-7-1"></b>  <span>links</span></li>
+               <li><b class="glyphicon glyphicon-stats"></b> <span>links</span></li> 
                <div class="menu-ass">
-                <li><i class="glyphicon glyphicon-menu-down"></i> <span>register now</span></li> 
-               <li><i class="glyphicon glyphicon-log-in"></i> <span>logout</span></li> 
+                <li><b class="glyphicon glyphicon-menu-down"></b> <span>register now</span></li> 
+               <li><b class="glyphicon glyphicon-log-in"></b> <span>logout</span></li> 
              </div>
         </ul>
     </nav>
@@ -193,7 +195,6 @@
         <script src="scripts/controllers/dashy2.js"></script>
         <script src="scripts/controllers/dashy3.js"></script>
         <script src="scripts/services/employees.js"></script>
-
         <!-- endbuild -->
 </body>
 </html>

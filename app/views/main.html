@@ -60,14 +60,16 @@
           <div google-chart chart="chart"></div>
       </div>
         <div class="col-xs-12 col-md-6 bar-chart">
-          <div google-chart chart="chart2" style="width: 99%; height:90;"></div>
-           <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"  height="90"></canvas>
+          <!--<div id="w" google-chart chart="chart2" style="width: 99%; height:90;"></div>-->
+          <canvas id="pie" class="chart chart-pie" chart-data="datapie" chart-labels="labelspie" chart-options="options"></canvas>
+        
+           <canvas  class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"  height="90"></canvas>
          </div>
   </div>
   </div>
    <div id="stat2" class="tab-pane fade" style="width: 100%; height:20%;">
        <div  style="display: block; box-sizing: border-box;" class="conatainer">
-        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"  width="300" height="300"></canvas>
+        <canvas  class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"  width="300" height="300"></canvas>
         </div>
    </div>
     
@@ -133,7 +135,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                </tr>
               </thead>
               <tbody>
-                 <tr ng-repeat="issue in items.issues | filter:{ issu_status: 0 } | orderBy:orderProp" ng-if="$index < 5">
+                 <tr ng-repeat="issue in items.issues | filter:{ issu_status: 0 } | orderBy:orderProp" ng-if="$index < 5" role="row">
                     <td>{{ issue.country }}</td>
                      <td>{{ issue.issu_des }}</td>
                      <td>{{ issue.s_time }}</td>
