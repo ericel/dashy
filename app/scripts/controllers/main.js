@@ -266,7 +266,7 @@ angular.module('dashyAppApp')
          current++;
      
      self.text(current);
-   },100);
+   },10);
   return this;
 }
 
