@@ -116,21 +116,6 @@ angular
     } 
     
   });
+
   }]);
-
-
-
-
-  var toggle_btn = $('.toggle-side');
-  /*toggle_btn.click(function() {
-    alert( "Handler for .click() called." );
-  });
-*/
-
-
-$('.clickable').on('click',function(){
-    var effect = $(this).data('effect');
-        $(this).closest('.panel')[effect]();
-	});
-
 

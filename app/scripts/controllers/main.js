@@ -186,11 +186,11 @@ angular.module('dashyAppApp')
 
 	$scope.labels = countrysArray;
   $scope.series = ['Employees', 'Issues', 'Open Issues', 'Closed Issues', 'Some'];
-  var arr = [];
+  //var arr = [];
   $interval(function(){   
-    var max = 208,
+    /*var max = 208,
     min = 200;
-    /*for (var i=200, t=208; i<t; i++) {
+    for (var i=200, t=208; i<t; i++) {
         arr.push(Math.round(Math.random() * (t - min) + min));
     }*/
     var num = Math.floor((Math.random() * 900) + 100);
@@ -213,15 +213,15 @@ angular.module('dashyAppApp')
   employ_countsArray.splice(6, 1, num);
   employ_countsArray.splice(4, 1, numIs);
   employ_countsArray.splice(3, 1, numclIs);
-   }, 3500);
-
+   }, 5000);
+ $timeout(function () {
  $scope.data = [
     
     employ_countsArray,
     allissuesArray,
     openISsArray,
     closedISsArray,
-  ];
+  ]; }, 500);
 
   $scope.onClick = function (points, evt) {
     console.log(points, evt);

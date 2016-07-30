@@ -3,38 +3,38 @@
   <div class="col-md-2 col-sm-4 col-xs-6 card-blocks">
     <span class="small"><span class="glyphicon glyphicon-user"></span> Total employees</span>
     <div class="stat-st stats_em">1029</div>
-    <span class="glyphicon glyphicon-chevron-up stat green"></span> Per Month Data
+    <span class="glyphicon glyphicon-chevron-up stat green"></span> Per Year Data
   </div>
  
 
   <div class="col-md-2 col-sm-4 col-xs-6 card-blocks">
   <span class="small"><span class="glyphicon glyphicon-eye-close"></span> All issues</span>
     <div class="stat-st stats_iss">1029</div>
-    <span class="glyphicon glyphicon-chevron-down stat green"></span> Per Month Data
+    <span class="glyphicon glyphicon-chevron-down stat green"></span> Per Year Data
   </div>
 
   <div class="col-md-2 col-sm-4 col-xs-6 card-blocks">
   <span class="small"><span class="glyphicon glyphicon-tint"></span> Open issues</span>
     <div class="stat-st stats_open">1029</div>
-    <span class="glyphicon glyphicon-chevron-up stat red"></span> Per Month Data
+    <span class="glyphicon glyphicon-chevron-up stat red"></span> Per Year Data
   </div>
 
    <div class="col-md-2 col-sm-4 col-xs-6 card-blocks">
   <span class="small"><span class="glyphicon glyphicon-tint"></span> Closed issues</span>
     <div class="stat-st stats_cl">1029</div>
-    <span class="glyphicon glyphicon-chevron-up stat red"></span> Per Month Data
+    <span class="glyphicon glyphicon-chevron-up stat red"></span> Per Year Data
   </div>
 
   <div class="col-md-2 col-sm-4 col-xs-6 card-blocks">
   <span class="small"><span class="glyphicon glyphicon-eye-close"></span> P. customers</span>
     <div class="stat-st stats_py">1029</div>
-    <span class="glyphicon glyphicon-chevron-down stat green"></span> Per Month Data
+    <span class="glyphicon glyphicon-chevron-down stat green"></span> Per Year Data
   </div>
 
    <div class="col-md-2 col-sm-4 col-xs-6 card-blocks">
   <span class="small"><span class="glyphicon glyphicon-plus-sign"></span> Customer count</span>
     <div class="stat-st stats_cu">1029</div>
-    <span class="glyphicon glyphicon-chevron-up stat green"></span> Per Month Data
+    <span class="glyphicon glyphicon-chevron-up stat green"></span> Per Year Data
   </div>
    
   
@@ -60,7 +60,6 @@
           <div google-chart chart="chart"></div>
       </div>
         <div class="col-xs-12 col-md-6 bar-chart">
-          <!--<div id="w" google-chart chart="chart2" style="width: 99%; height:90;"></div>-->
           <canvas id="pie" class="chart chart-pie" chart-data="datapie" chart-labels="labelspie" chart-options="options"></canvas>
         
            <canvas  class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"  height="90"></canvas>
@@ -111,7 +110,7 @@
   </div>
    <div class="panel panel-default">
     <div class="panel-heading"><span class="glyphicon glyphicon-volume-up marker"></span> Some updates <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
-      <div class="panel-body"><p class="alert alert-success">This page is temporarily disabled by the site administrator for some reason.<br> <a href="#">Click here</a> to enable the page.</p>
+      <div class="panel-body"><p class="alert alert-success">This page is temporarily disabled by the site administrator for some reason.<br>to enable the page.</p>
       <p class="alert alert-info">
         What is Lorem Ipsum?
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p><p class="alert alert-warning"> ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting
@@ -126,7 +125,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <div class="panel panel-default">
     <div class="panel-heading"><span class="glyphicon glyphicon-remove marker"></span> Recent Issues <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
       <div class="panel-body">
-        <table datatable="ng" class="row-border hover">
+        <table  class="row-border hover">
               <thead>
                <tr>
                  <th>Country</th>
@@ -135,7 +134,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                </tr>
               </thead>
               <tbody>
-                 <tr ng-repeat="issue in items.issues | filter:{ issu_status: 0 } | orderBy:orderProp" ng-if="$index < 5" role="row">
+                 <tr ng-repeat="issue in items.issues | filter:{ issu_status: 0 } | orderBy:orderProp" ng-if="$index < 5">
                     <td>{{ issue.country }}</td>
                      <td>{{ issue.issu_des }}</td>
                      <td>{{ issue.s_time }}</td>
@@ -147,7 +146,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
   </div>
    <div class="panel panel-default">
     <div class="panel-heading"><span class="glyphicon glyphicon-calendar marker"></span> Some updates <span class="pull-right glyphicon glyphicon-remove closex"></span></div>
-      <div class="panel-body">This page is temporarily disabled by the site administrator for some reason.<br> <a href="#">Click here</a> to enable the page.
+      <div class="panel-body">This page is temporarily disabled by the site administrator for some reason.<br> to enable the page.
       <p>
         What is Lorem Ipsum?
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.

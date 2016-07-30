@@ -84,7 +84,7 @@ angular.module('dashyAppApp')
 	  employ_countsArray.splice(6, 1, num);
 	  employ_countsArray.splice(4, 1, numIs);
 	  employ_countsArray.splice(3, 1, numclIs);
-	   }, 3500);
+	   }, 5000);
 	 $timeout(function () {
 	  $scope.data = [
 	    employ_countsArray,
