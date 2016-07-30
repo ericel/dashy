@@ -8,102 +8,6 @@
  * Controller of the dashyAppApp
  */
 angular.module('dashyAppApp')
-	/*.factory("Markers", function(){
-	  var Markers = [
-	    {
-	      "id": "0",
-	      "coords": {
-	        "latitude": "45.5200",
-	        "longitude": "-122.6819"
-	      },
-	      "window": {
-	        "title": "Portland, OR"
-	      }
-	    },
-	    {
-	      "id": "1",
-	      "coords": {
-	        "latitude": "40.7903",
-	        "longitude": "-73.9597"
-	      },
-	      "window" : {
-	        "title": "Manhattan New York, NY"
-	      }
-	    },
-      {
-        "id": "3",
-        "coords": {
-          "latitude": "3.848032",
-          "longitude": "11.502075"
-        },
-        "window" : {
-          "title": "Joseph T A, Yaounde"
-        }
-      },
-      {
-        "id": "4",
-        "coords": {
-          "latitude": "51.048615",
-          "longitude": "-114.070846"
-        },
-        "window" : {
-          "title": "4 St SW, Calgary"
-        }
-      },
-      {
-        "id": "5",
-        "coords": {
-          "latitude": "-14.235004",
-          "longitude": "-51.925280"
-        },
-        "window" : {
-          "title": "Banco De, Brazil"
-        }
-      },
-      {
-        "id": "6",
-        "coords": {
-          "latitude": "31.230416",
-          "longitude": "121.473701"
-        },
-        "window" : {
-          "title": "Shanghai, China"
-        }
-      },
-      {
-        "id": "7",
-        "coords": {
-          "latitude": "55.755826",
-          "longitude": "37.617300"
-        },
-        "window" : {
-          "title": "Moscow, Russia"
-        }
-      },
-      {
-        "id": "8",
-        "coords": {
-          "latitude": "52.520007",
-          "longitude": "13.404954"
-        },
-        "window" : {
-          "title": "Berlin, Germany"
-        }
-      },
-      {
-        "id": "8",
-        "coords": {
-          "latitude": "-33.868820",
-          "longitude": "151.209296"
-        },
-        "window" : {
-          "title": "Sydney, Australia"
-        }
-      }
-	  ];
-	  return Markers;
-	}) Markers,
-*/
 .controller('MainCtrl', function ($scope, employees,  $interval, $timeout) {
 	var _this = this;
     employees.getEmployees().then(function(data) {
@@ -144,12 +48,6 @@ angular.module('dashyAppApp')
 	employeesArray.insert(0, ['Locale', 'Count']);
 	issuesArray.insert(0, ['Locale', 'Count', 'Issues', 'Open Issues', 'Closed Issues']);
   
-	 /* $scope.map = { 
-	    center: { latitude: 39.8282, longitude: -98.5795 }, 
-	    zoom: 1
-	  };
-	  $scope.markers = Markers;
-   */
 	  var chart1 = {};
 	 
 	  chart1.type = "GeoChart";
