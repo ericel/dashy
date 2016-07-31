@@ -74,14 +74,7 @@
     
   </div>
   <div class="box-2-semi-up">
-     <div>
-    <span class="" ng-repeat="item in items.countries">
-    <span class="charte" easypiechart ng-init="options = { animate:true, duration:1000, barColor:'#E67E22', scaleColor:true, lineWidth:1, lineCap:'butt' }" percent = "item.employ_count" options="optionseasy">
-      <span class="percent" ng-bind="{{item.employ_count}}"></span>
-    </span>
-    <span class="pie-title"> {{item.country}} </span>
-    </span>
-  </span>
+    
 </div>
 </section>
 <section class="sec-2 row">
@@ -135,7 +128,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
               </thead>
               <tbody>
                  <tr ng-repeat="issue in items.issues | filter:{ issu_status: 0 } | orderBy:orderProp" ng-if="$index < 5">
-                    <td>{{ issue.country }}</td>
+                    <td>{{ issue.country }} </td>
                      <td>{{ issue.issu_des }}</td>
                      <td>{{ issue.s_time }}</td>
                  </tr>

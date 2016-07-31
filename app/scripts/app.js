@@ -20,7 +20,7 @@ angular
     'ui.router',
     'ui.router.title',
     'googlechart',
-    'easypiechart',
+    /*'easypiechart',*/
     'chart.js',
     'ds.clock',
     'datatables'
