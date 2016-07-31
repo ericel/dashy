@@ -8,12 +8,13 @@
  * Controller of the dashyAppApp
  */
 angular.module('dashyAppApp')
-.controller('MainCtrl', function ($scope, employees,  $interval, $timeout) {
+.controller('MainCtrl', function ($scope, employees,  $interval, $timeout, $http) {
 	var _this = this;
-    employees.getEmployees().then(function(data) {
-		_this.items = data;
-	    $scope.items = _this.items;
-     var countrysArray = _this.items.countries.map(function(v) {
+  $scope.getData = function() { // getDATA function
+    $http.get('./data/employee.json').then(function(response){
+      $scope.responseData = response.data;
+      _this.items = response.data;
+    var countrysArray = _this.items.countries.map(function(v) {
       return v.country;
     });
     var employ_countsArray = _this.items.countries.map(function(v) {
@@ -30,67 +31,62 @@ angular.module('dashyAppApp')
     });
      
      var employeesArray = _this.items.countries.map(function(v) {
-		  return [v.country, v.employ_count];
-		});
+      return [v.country, v.employ_count];
+    });
 
-     var issuesArray = _this.items.issues.map(function(v) {
-		  return [v.country, v.employ_count, v.allissues, v.open_issues, v.closed_issues];
-		});
+     var issuesArray = _this.items.countries.map(function(v) {
+      return [v.country, v.employ_count, v.allissues, v.open_issues, v.closed_issues];
+    });
 
-    var payin_custArray = _this.items.issues.map(function(v) {
+    var payin_custArray = _this.items.countries.map(function(v) {
       return v.payin_cust;
     });
 
     Array.prototype.insert = function (index, item) {
-		  this.splice(index, 0, item);
-	};
+      this.splice(index, 0, item);
+  };
 
-	employeesArray.insert(0, ['Locale', 'Count']);
-	issuesArray.insert(0, ['Locale', 'Count', 'Issues', 'Open Issues', 'Closed Issues']);
+  employeesArray.insert(0, ['Locale', 'Count']);
+  issuesArray.insert(0, ['Locale', 'Count', 'Issues', 'Open Issues', 'Closed Issues']);
   
-	  var chart1 = {};
-	 
-	  chart1.type = "GeoChart";
-	 
-	  chart1.data = employeesArray;
+    var chart1 = {};
+   
+    chart1.type = "GeoChart";
+   
+    chart1.data = employeesArray;
     
-	  chart1.options = {
-	    width: '100%',
-	    height: 300,
-	    chartArea: {left:10,top:10,bottom:0,height:"100%"},
-	    colorAxis: {colors: ['#70ABAF', '#0E5660']},
-	    displayMode: 'world',
-	    //colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
+    chart1.options = {
+      width: '100%',
+      height: 300,
+      chartArea: {left:10,top:10,bottom:0,height:"100%"},
+      colorAxis: {colors: ['#70ABAF', '#0E5660']},
+      displayMode: 'world',
+      //colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
         backgroundColor: '#f5f5f5',
         datalessRegionColor: '#3a3633',
         defaultColor: '#f5f5f5'
-	  };
+    };
 
 
 
-	  chart1.formatters = {
-	    number : [{
-	      columnNum: 1,
-	      pattern: " #,##0.00"
-	    }]
-	  };
+    chart1.formatters = {
+      number : [{
+        columnNum: 1,
+        pattern: " #,##0.00"
+      }]
+    };
 
-	  $scope.chart = chart1;
+    $scope.chart = chart1;
 
 
   $scope.labelspie = countrysArray;
   $scope.datapie = employ_countsArray;
 
 
-	$scope.labels = countrysArray;
+  $scope.labels = countrysArray;
   $scope.series = ['Employees', 'Issues', 'Open Issues', 'Closed Issues', 'Some'];
-  //var arr = [];
   $interval(function(){   
-    /*var max = 208,
-    min = 200;
-    for (var i=200, t=208; i<t; i++) {
-        arr.push(Math.round(Math.random() * (t - min) + min));
-    }*/
+    
     var num = Math.floor((Math.random() * 900) + 100);
     var numIs = Math.floor((Math.random() * 500) + 200);
     var numclIs = Math.floor((Math.random() * 700) + 50);
@@ -112,14 +108,13 @@ angular.module('dashyAppApp')
   employ_countsArray.splice(4, 1, numIs);
   employ_countsArray.splice(3, 1, numclIs);
    }, 5000);
- $timeout(function () {
- $scope.data = [
+   $scope.data = [
     
     employ_countsArray,
     allissuesArray,
     openISsArray,
     closedISsArray,
-  ]; }, 500);
+  ];
 
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
@@ -146,8 +141,48 @@ angular.module('dashyAppApp')
       ]
     }
   };
-  
+      console.log(countrysArray);
 
+//datatables
+$scope.orderProp = 's_time';
+//$scope.quantity = 5;
+    });
+    } // End getDATA function
+  $scope.getData();
+  $interval(function(){
+    $scope.getData();
+  }, 9000);
+
+  $http.get('./data/employee.json').then(function(response){
+      $scope.responseData = response.data;
+      _this.items = response.data;
+    var countrysArray = _this.items.countries.map(function(v) {
+      return v.country;
+    });
+    var employ_countsArray = _this.items.countries.map(function(v) {
+      return v.employ_count;
+    });
+    var allissuesArray = _this.items.countries.map(function(v) {
+      return v.allissues;
+    });
+    var openISsArray = _this.items.countries.map(function(v) {
+      return v.open_issues;
+    });
+    var closedISsArray = _this.items.countries.map(function(v) {
+      return v.closed_issues;
+    });
+     
+     var employeesArray = _this.items.countries.map(function(v) {
+      return [v.country, v.employ_count];
+    });
+
+     var issuesArray = _this.items.issues.map(function(v) {
+      return [v.country, v.employ_count, v.allissues, v.open_issues, v.closed_issues];
+    });
+
+    var payin_custArray = _this.items.issues.map(function(v) {
+      return v.payin_cust;
+    });
  $.fn.countTo = function(arrNums){
    var self = this;
    function add(a,b){
@@ -164,10 +199,9 @@ angular.module('dashyAppApp')
          current++;
      
      self.text(current);
-   },10);
+   },50);
   return this;
 }
-
 
 $('.stats_em').countTo(employ_countsArray);
 $('.stats_iss').countTo(allissuesArray);
@@ -175,26 +209,7 @@ $('.stats_open').countTo(openISsArray);
 $('.stats_cl').countTo(closedISsArray);
 $('.stats_py').countTo(payin_custArray);
 $('.stats_cu').countTo(payin_custArray);
-
-
-
-//datatables
-$scope.orderProp = 's_time';
-//$scope.quantity = 5;
-
 });
-
-    //$scope.percenteasy = 65;
-        $scope.optionseasy = {
-            animate:{
-                duration:1000,
-                enabled:true
-            },
-            barColor:'#2C3E50',
-            scaleColor:false,
-            lineWidth:9,
-            lineCap:'circle'
-        };
  
 });
 

@@ -8,11 +8,17 @@
  * Controller of the dashyAppApp
  */
 angular.module('dashyAppApp')
-  .controller('Dashy3Ctrl', function ($scope, employees) {
+  .controller('Dashy3Ctrl', function ($scope, employees, $http, $interval) {
    var _this = this;
-    employees.getEmployees().then(function(data) {
-		_this.items = data;
+  $scope.getData = function() { // getDATA function
+    $http.get('./data/employee.json').then(function(response){
+		_this.items = response.data;
 		$scope.items = _this.items;
 	});
-  });
+  }// End getDATA function
+  $scope.getData();
+  $interval(function(){
+    $scope.getData();
+  }, 10000);
 $("#querydatatablesets").css("width","100%");
+});

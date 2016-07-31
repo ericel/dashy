@@ -92,7 +92,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="info" ng-repeat="company in items.countries">
+            <tr class="info" ng-repeat="company in responseData.countries">
               <td>{{ company.country }}</td>
               <td>{{ company.manager }}</td>
               <td>{{ company.commpanyname }}</td>
@@ -127,7 +127,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
                </tr>
               </thead>
               <tbody>
-                 <tr ng-repeat="issue in items.issues | filter:{ issu_status: 0 } | orderBy:orderProp" ng-if="$index < 5">
+                 <tr ng-repeat="issue in responseData.issues | filter:{ issu_status: 0 } | orderBy:orderProp" ng-if="$index < 5">
                     <td>{{ issue.country }} </td>
                      <td>{{ issue.issu_des }}</td>
                      <td>{{ issue.s_time }}</td>
