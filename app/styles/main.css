@@ -521,6 +521,13 @@ margin-left: 15px;
 .bar-chart canvas {
   background: #ffffff;
 }
+.chartsmall {
+  width:95%;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin: 0 auto;
+
+}
 .smalldata {
   position:none;
   top: 0px;
@@ -562,4 +569,16 @@ margin-left: 15px;
 .col-l-f {
   float: left;
   width: 50%;
+}
+@media screen and (max-width: 900px) {
+table {width:100%;}
+thead {display: none;}
+tr:nth-of-type(2n) {background-color: inherit;}
+tr td:first-child {background: #f0f0f0; font-weight:bold;font-size:1.3em;}
+tbody td {display: block;  text-align:center;}
+tbody td:before { 
+    content: attr(data-th); 
+    display: block;
+    text-align:center;  
+  }
 }

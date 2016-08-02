@@ -141,7 +141,7 @@ angular.module('dashyAppApp')
       ]
     }
   };
-      console.log(countrysArray);
+    //  console.log(countrysArray);
 
 //datatables
 $scope.orderProp = 's_time';
