@@ -62,7 +62,7 @@ angular.module('dashyAppApp')
 
 	  $scope.labels = countrysArray;
 	  $scope.series = ['Employees', 'Issues', 'Open Issues', 'Closed Issues'];
-	$interval(function(){   
+	/*$interval(function(){   
   
     var num = Math.floor((Math.random() * 900) + 100);
     var numIs = Math.floor((Math.random() * 500) + 200);
@@ -82,7 +82,7 @@ angular.module('dashyAppApp')
 	  employ_countsArray.splice(6, 1, num);
 	  employ_countsArray.splice(4, 1, numIs);
 	  employ_countsArray.splice(3, 1, numclIs);
-	   }, 6000);
+	   }, 6000);*/
 	 $timeout(function () {
 	  $scope.data = [
 	    employ_countsArray,
@@ -90,6 +90,12 @@ angular.module('dashyAppApp')
 	    openISsArray,
 	    closedISsArray
 	  ];}, 100);
+ 
+	 $timeout(function () {
+	  $scope.dataopen = allissuesArray
+
+	  }, 500);
+
 	  $scope.seriespaying_cust = ['Paying Customers'];
 	   $timeout(function () {
 	   	$scope.datapaying_cust = [
@@ -97,11 +103,7 @@ angular.module('dashyAppApp')
 	  ];
 	  }, 500);
 
-	  $timeout(function () {
-	   	$scope.datapaying_cust = [
-	    allissuesArray
-	  ];
-	  }, 2500);
+	  
 
 
 	  $scope.onClick = function (points, evt) {

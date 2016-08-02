@@ -92,7 +92,7 @@
       "s_time":"2016-03-24 21:17:38",
       "cust_email":"dgeorgeg@google.it",
       "issu_des":"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim.",
-      "issu_status":0,
+      "issu_status":1,
       "issu_closed_time":"2016-07-19 06:28:11",
       "emplo_closed_name":"Valérie"
    },
@@ -147,7 +147,7 @@
       "s_time":"2016-06-10 07:05:24",
       "cust_email":"amasonl@typepad.com",
       "issu_des":"Quisque porta volutpat erat.",
-      "issu_status":0,
+      "issu_status":1,
       "issu_closed_time":"2016-05-30 22:26:23",
       "emplo_closed_name":"Yú"
    },
@@ -158,7 +158,7 @@
       "s_time":"2016-04-23 06:38:01",
       "cust_email":"bcarrollm@pagesperso-orange.fr",
       "issu_des":"Sed accumsan felis. Ut at dolor quis odio consequat varius.",
-      "issu_status":0,
+      "issu_status":1,
       "issu_closed_time":"2016-05-04 01:27:26",
       "emplo_closed_name":"Wá"
    },
@@ -268,7 +268,7 @@
       "s_time":"2016-05-01 22:43:57",
       "cust_email":"jstanleyw@cnn.com",
       "issu_des":"Fusce consequat.",
-      "issu_status":0,
+      "issu_status":1,
       "issu_closed_time":"2016-06-10 20:36:31",
       "emplo_closed_name":"Eloïse"
    },

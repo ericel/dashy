@@ -581,4 +581,11 @@ tbody td:before {
     display: block;
     text-align:center;  
   }
+
+}
+.highlight {
+  color: green;
+}
+.openeds {
+  color: red;
 }
