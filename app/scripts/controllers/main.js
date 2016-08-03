@@ -93,7 +93,7 @@ angular.module('dashyAppApp')
     allissuesArray,
     openISsArray,
     closedISsArray,
-  ];}, 500);
+  ];}, 900);
 
   $scope.onClick = function (points, evt) {
     console.log(points, evt);
@@ -196,7 +196,7 @@ $scope.getDataCsv = function() {
   $scope.labelsopen = countrysArray;
   $timeout(function () {
     $scope.dataopen = allissuesArray;
-    }, 900);
+    }, 700);
 
  $.fn.countTo = function(arrNums){
    var self = this;
