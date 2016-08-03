@@ -8,11 +8,11 @@
  * Service in the dashyAppApp.
  */
 angular.module('dashyAppApp')
-  .service('employees', function () {
+  .service('employees', function ($http) {
     this.getEmployees = function() {
-      return $.get( './data/employee.json' );
+      return $http.get( './data/employee.json' );
     };
-    this.getEmployees01 = function() {
-      return $.get( './data/employee01.json' );
+    this.getCountries = function() {
+      return $http.get( './data/countries.csv' );
     };
   });

@@ -17,7 +17,7 @@
          </tr>
           </thead>
           <tbody>
-         <tr ng-repeat="issue in items.issues | orderBy:orderProp">
+         <tr ng-repeat="issue in responseData.issues | orderBy:orderProp">
           <td>{{ issue.country }}</td>
           <td>{{ issue.cus_name }}</td>
           <td>{{ issue.cust_email }}</td>

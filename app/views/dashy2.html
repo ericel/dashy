@@ -29,16 +29,18 @@
 	<div class="col-xs-12 col-md-6">
 	    <div class="panel panel-default">
           <div class="panel-heading head_p">Reported Issues</div>
-           <div class="panel-body">
+           <div class="panel-body innertube">
            	<canvas id="bar" class="chart chart-bar"
 			  chart-data="datareported" chart-labels="labelsperiod" chart-series="seriesreported">
 			</canvas>      	
            </div>
      	</div>
       <div class="panel panel-default">
-          <div class="panel-heading">All Issues</div>
+          <div class="panel-heading">All Issues cvs</div>
            <div class="panel-body">
-                  
+              <canvas id="radar" class="chart chart-radar"
+                chart-data="dataradar" chart-options="options" chart-labels="labelsradar">
+              </canvas>     
            </div>
       </div>
 	</div>
