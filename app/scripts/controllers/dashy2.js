@@ -168,7 +168,7 @@ angular.module('dashyAppApp')
       }
     }
 
-      $scope.responseData = $scope.dataList;
+      $scope.responseDataCsv = $scope.dataList;
       _this.items = $scope.dataList;
     var countrysArray = _this.items.map(function(v) {
       return v.country;
@@ -228,9 +228,10 @@ $scope.getData()
            $scope.getDataMain();
            console.log('There is a change in data file!');
            $scope.items  = data2;
+           $scope.responseData = data2;
         }
      });
-   }, 5000);
+   }, 1);
 
 });
 
@@ -253,9 +254,11 @@ $scope.getDataCsvUp()
            $scope.getDataCsv();
            console.log('There is a change in data file!');
            $scope.itemscsv  = data2csv;
+           $scope.responseDataCsv = data2csv;
+
         }
      });
-   }, 5000);
+   }, 1);
 
 });
   });

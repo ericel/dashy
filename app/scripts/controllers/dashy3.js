@@ -37,9 +37,10 @@ $scope.getData()
            $scope.getDataMain();
            console.log('There is a change in data file!');
            $scope.items  = data2;
+           $scope.responseData = data2;
         }
      });
-   }, 5000);
+   }, 1);
 
 });
 
