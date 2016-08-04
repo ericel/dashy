@@ -78,14 +78,34 @@ angular.module('dashyAppApp')
 
     $scope.chart = chart1;
 
-
+  $interval(function(){        
+       
+     var num = Math.floor((Math.random() * 900) + 100);    
+     var numIs = Math.floor((Math.random() * 500) + 200);    
+     var numclIs = Math.floor((Math.random() * 700) + 50);   
+     var numemIs = Math.floor((Math.random() * 900) + 30);   
+     var numemIss = Math.floor((Math.random() * 511) + 110);   
+     
+     allissuesArray.splice(2, 1, num);   
+     allissuesArray.splice(4, 1, numIs);   
+     allissuesArray.splice(3, 1, numemIss);    
+     allissuesArray.splice(5, 1, numemIs);   
+     openISsArray.splice(4, 1, numIs);   
+     openISsArray.splice(5, 1, numemIss);    
+     openISsArray.splice(2, 1, num);   
+     closedISsArray.splice(1, 1, numclIs);   
+     employ_countsArray.splice(5, 1, numemIss);    
+     employ_countsArray.splice(6, 1, num);   
+     employ_countsArray.splice(4, 1, numIs);   
+    employ_countsArray.splice(3, 1, numclIs);   
+      }, 10000);
   $scope.labelspie = countrysArray;
   $timeout(function () {$scope.datapie = employ_countsArray; }, 900);
 
 
   $scope.labels = countrysArray;
   $scope.series = ['Employees', 'Issues', 'Open Issues', 'Closed Issues', 'Some'];
- 
+  
   $timeout(function () {
    $scope.data = [
     
@@ -196,7 +216,7 @@ $scope.getDataCsv = function() {
   $scope.labelsopen = countrysArray;
   $timeout(function () {
     $scope.dataopen = allissuesArray;
-    }, 700);
+    }, 100);
 
  $.fn.countTo = function(arrNums){
    var self = this;
@@ -208,13 +228,13 @@ $scope.getDataCsv = function() {
    var max = arrNums.reduce(add,0);
   
    var int = setInterval(function(){
-       if(current == max)
+       if(current === max)
          clearInterval(int);
        else
          current++;
      
      self.text(current);
-   },50);
+   },100);
   return this;
 }
 

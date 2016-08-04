@@ -45,7 +45,28 @@ angular.module('dashyAppApp')
     Array.prototype.insert = function (index, item) {
       this.splice(index, 0, item);
   };
-
+     $interval(function(){        
+       
+     var num = Math.floor((Math.random() * 900) + 100);    
+     var numIs = Math.floor((Math.random() * 500) + 200);    
+     var numclIs = Math.floor((Math.random() * 700) + 50);   
+     var numemIs = Math.floor((Math.random() * 900) + 30);   
+     var numemIss = Math.floor((Math.random() * 511) + 110);   
+     
+     allissuesArray.splice(2, 1, num);   
+     allissuesArray.splice(4, 1, numIs);   
+     allissuesArray.splice(3, 1, numemIss);    
+     allissuesArray.splice(5, 1, numemIs);   
+     openISsArray.splice(4, 1, numIs);   
+     openISsArray.splice(5, 1, numemIss);    
+     openISsArray.splice(2, 1, num);   
+     closedISsArray.splice(1, 1, numclIs);   
+     employ_countsArray.splice(5, 1, numemIss);    
+     employ_countsArray.splice(6, 1, num);   
+     employ_countsArray.splice(4, 1, numIs);   
+     employ_countsArray.splice(3, 1, numclIs);
+     payin_custArray.splice(4, 1, numIs); 
+      }, 10000);
   employeesArray.insert(0, ['Locale', 'Count']);
   issuesArray.insert(0, ['Locale', 'Count', 'Issues', 'Open Issues', 'Closed Issues']);
 
