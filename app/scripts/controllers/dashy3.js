@@ -9,7 +9,7 @@
  */
 
 angular.module('dashyAppApp')
- .controller('Dashy3Ctrl', function($rootScope, $scope, employees, $interval)            {
+ .controller('Dashy3Ctrl', function($scope, employees, $interval)            {
  var _this = this;
  $scope.getDataMain = function() { 
     employees.getEmployees().then(function(response){
